@@ -12,8 +12,10 @@ import { Projects } from './components/Projects.tsx';
 import { Process } from './components/Process.tsx';
 import { Contact } from './components/Contact.tsx';
 import { Footer } from './components/Footer.tsx';
+import { PopMessage } from './components/PopMessage.tsx';
 
 export default function App() {
+
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
@@ -78,7 +80,9 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <PopMessage />
     </div>
   );
 }
+
 
