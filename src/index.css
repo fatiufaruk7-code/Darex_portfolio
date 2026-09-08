@@ -145,6 +145,7 @@ header {
   left: 0;
   width: 100%;
   z-index: 999;
+  padding-top: env(safe-area-inset-top, 0px);
   background: rgba(5, 7, 13, 0.55);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);

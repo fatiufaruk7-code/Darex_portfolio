@@ -12,6 +12,8 @@ import { Projects } from './components/Projects.tsx';
 import { Process } from './components/Process.tsx';
 import { Contact } from './components/Contact.tsx';
 import { Footer } from './components/Footer.tsx';
+import { PWAInstallBanner } from './components/PWAInstallBanner.tsx';
+import { OfflineIndicator } from './components/OfflineIndicator.tsx';
 
 export default function App() {
 
@@ -69,6 +71,7 @@ export default function App() {
       <div className="mesh-2" aria-hidden="true" />
       <div className="mesh-3" aria-hidden="true" />
 
+      <OfflineIndicator />
       <Navbar activeSection={activeSection} />
       <main className="relative z-10">
         <Hero />
@@ -79,6 +82,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <PWAInstallBanner />
     </div>
   );
 }

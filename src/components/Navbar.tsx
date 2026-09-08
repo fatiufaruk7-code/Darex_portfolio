@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, MessageSquare } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData.ts';
+import { PWAInstallButton } from './PWAInstallButton.tsx';
 
 interface NavbarProps {
   activeSection: string;
@@ -63,26 +64,34 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             </li>
           ))}
           {mobileMenuOpen && (
-            <li className="pt-3 sm:hidden">
-              <a
-                href="#contact"
-                className="nav-contact inline-flex items-center gap-2"
-                onClick={(e) => handleNavClick(e, 'contact')}
-              >
-                <MessageSquare className="w-3.5 h-3.5" />
-                Connect
-              </a>
-            </li>
+            <>
+              <li className="pt-3 sm:hidden">
+                <a
+                  href="#contact"
+                  className="nav-contact inline-flex items-center justify-center gap-2 w-full"
+                  onClick={(e) => handleNavClick(e, 'contact')}
+                >
+                  <MessageSquare className="w-3.5 h-3.5" />
+                  Connect
+                </a>
+              </li>
+              <li className="pt-2 sm:hidden">
+                <PWAInstallButton variant="mobile" />
+              </li>
+            </>
           )}
         </ul>
 
-        <a 
-          href="#contact" 
-          className="nav-contact hidden sm:inline-flex"
-          onClick={(e) => handleNavClick(e, 'contact')}
-        >
-          Connect
-        </a>
+        <div className="hidden sm:flex items-center gap-3">
+          <PWAInstallButton variant="nav" />
+          <a 
+            href="#contact" 
+            className="nav-contact inline-flex items-center gap-2"
+            onClick={(e) => handleNavClick(e, 'contact')}
+          >
+            Connect
+          </a>
+        </div>
 
         <button
           className="menu-btn"
