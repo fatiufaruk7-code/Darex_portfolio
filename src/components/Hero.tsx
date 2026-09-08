@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Check, Copy, Github, Linkedin, Twitter, ChevronDown } from 'lucide-react';
+import { ArrowRight, Check, Copy, Twitter, MessageCircle, ChevronDown } from 'lucide-react';
 import { personalInfo, codeSnippetString } from '../data/portfolioData.ts';
 
 export const Hero: React.FC = () => {
@@ -77,36 +77,25 @@ export const Hero: React.FC = () => {
 
             <div className="socials sm:ml-auto">
               <a 
-                href={personalInfo.socials.github} 
-                target="_blank" 
-                rel="noreferrer"
-                aria-label="GitHub Profile"
-                title="GitHub Profile"
-                id="social-github"
-              >
-                <Github className="w-4 h-4" />
-              </a>
-
-              <a 
-                href={personalInfo.socials.linkedin} 
-                target="_blank" 
-                rel="noreferrer"
-                aria-label="LinkedIn Profile"
-                title="LinkedIn Profile"
-                id="social-linkedin"
-              >
-                <Linkedin className="w-4 h-4" />
-              </a>
-
-              <a 
                 href={personalInfo.socials.twitter} 
                 target="_blank" 
                 rel="noreferrer"
-                aria-label="X (Twitter) Profile"
-                title="X (Twitter) Profile"
+                aria-label="Twitter / X Profile"
+                title="Twitter / X Profile (@Toriblackm8j9)"
                 id="social-twitter"
               >
                 <Twitter className="w-4 h-4" />
+              </a>
+
+              <a 
+                href={personalInfo.socials.whatsapp} 
+                target="_blank" 
+                rel="noreferrer"
+                aria-label={`Chat on WhatsApp (${personalInfo.socials.whatsappNumber})`}
+                title={`Chat on WhatsApp (${personalInfo.socials.whatsappNumber})`}
+                id="social-whatsapp"
+              >
+                <MessageCircle className="w-4 h-4 text-emerald-400" />
               </a>
             </div>
           </div>

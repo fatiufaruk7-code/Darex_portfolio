@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Clock, Send, Check, Copy, ExternalLink, Sparkles } from 'lucide-react';
+import { Mail, MapPin, Clock, Send, Check, Copy, ExternalLink, Sparkles, MessageCircle, Twitter } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData.ts';
 import { ContactFormData } from '../types.ts';
 
@@ -100,6 +100,32 @@ export const Contact: React.FC = () => {
                     </>
                   )}
                 </button>
+              </div>
+
+              <div className="contact-info-item">
+                <MessageCircle className="w-4 h-4 text-emerald-400" />
+                <a 
+                  href={personalInfo.socials.whatsapp} 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="hover:underline font-mono text-xs text-white"
+                  title="Chat directly on WhatsApp"
+                >
+                  WhatsApp: {personalInfo.socials.whatsappNumber}
+                </a>
+              </div>
+
+              <div className="contact-info-item">
+                <Twitter className="w-4 h-4 text-[#7182ff]" />
+                <a 
+                  href={personalInfo.socials.twitter} 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="hover:underline font-mono text-xs text-white"
+                  title="Connect on X (Twitter)"
+                >
+                  Twitter / X: @Toriblackm8j9
+                </a>
               </div>
 
               <div className="contact-info-item">

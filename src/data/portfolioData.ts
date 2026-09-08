@@ -12,9 +12,9 @@ export const personalInfo = {
   location: "Available Worldwide / Remote",
   experience: "3+ Years Building for Web",
   socials: {
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
-    twitter: "https://x.com",
+    twitter: "https://x.com/Toriblackm8j9",
+    whatsapp: "https://wa.me/2348137941486",
+    whatsappNumber: "08137941486",
   }
 };
 
