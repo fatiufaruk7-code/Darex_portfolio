@@ -103,7 +103,7 @@ export const Contact: React.FC = () => {
               </div>
 
               <div className="contact-info-item">
-                <MessageCircle className="w-4 h-4 text-emerald-400" />
+                <MessageCircle className="w-4 h-4 text-[#FF8C00]" />
                 <a 
                   href={personalInfo.socials.whatsapp} 
                   target="_blank" 
@@ -116,7 +116,7 @@ export const Contact: React.FC = () => {
               </div>
 
               <div className="contact-info-item">
-                <Twitter className="w-4 h-4 text-[#7182ff]" />
+                <Twitter className="w-4 h-4 text-[#FF6A00]" />
                 <a 
                   href={personalInfo.socials.twitter} 
                   target="_blank" 
@@ -129,20 +129,20 @@ export const Contact: React.FC = () => {
               </div>
 
               <div className="contact-info-item">
-                <MapPin className="w-4 h-4 text-[#7182ff]" />
+                <MapPin className="w-4 h-4 text-[#FF6A00]" />
                 <span>{personalInfo.location}</span>
               </div>
 
               <div className="contact-info-item">
-                <Clock className="w-4 h-4 text-[#7182ff]" />
+                <Clock className="w-4 h-4 text-[#FF6A00]" />
                 <span>Typical Response Time: &lt; 24 Hours</span>
               </div>
             </div>
 
             {/* Notice about FormSubmit Activation */}
-            <div className="mt-8 p-4 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-xs text-[#94a3b8] leading-relaxed">
-              <div className="flex items-center gap-2 text-indigo-300 font-semibold mb-1">
-                <Sparkles className="w-4 h-4 text-[#7182ff]" />
+            <div className="mt-8 p-4 rounded-xl bg-[#0D0D0D] border border-[#262626] text-xs text-[#A3A3A3] leading-relaxed">
+              <div className="flex items-center gap-2 text-[#FF8C00] font-semibold mb-1">
+                <Sparkles className="w-4 h-4 text-[#FF6A00]" />
                 <span>Why was there an error previously?</span>
               </div>
               FormSubmit sends a one-time activation email to <span className="text-white font-mono">fatiufaruk7@gmail.com</span> with an <strong className="text-white">&quot;Activate Form&quot;</strong> button. Please check your Gmail (and Spam/Updates folder) and click that button once to enable the web form permanently. Alternatively, use the <strong className="text-white">&quot;Send via Gmail&quot;</strong> option below for instant delivery with zero activation!
@@ -151,18 +151,20 @@ export const Contact: React.FC = () => {
 
           <div className="contact-form-container">
             {/* Tab switch between Direct Gmail (Guaranteed) and Web Form */}
-            <div className="flex items-center gap-2 p-1.5 rounded-xl bg-white/[0.03] border border-white/[0.08] mb-5">
+            <div className="flex items-center gap-2 p-1.5 rounded-xl bg-[#0D0D0D] border border-[#262626] mb-5">
               <button
                 type="button"
                 onClick={() => setActiveTab('gmail')}
                 className={`flex-1 py-2 text-xs font-semibold rounded-lg transition-all flex items-center justify-center gap-2 cursor-pointer ${
                   activeTab === 'gmail'
-                    ? 'bg-white text-[#05070d] shadow-md'
-                    : 'text-[#94a3b8] hover:text-white'
+                    ? 'bg-[#FF6A00] text-[#050505] font-bold shadow-md shadow-[#FF6A00]/25'
+                    : 'text-[#A3A3A3] hover:text-white'
                 }`}
               >
                 <span>Direct to Gmail</span>
-                <span className="text-[9px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-600 font-mono">100% Reliable</span>
+                <span className={`text-[9px] px-1.5 py-0.5 rounded font-mono ${
+                  activeTab === 'gmail' ? 'bg-black/20 text-[#050505]' : 'bg-[#FF6A00]/15 text-[#FF8C00]'
+                }`}>100% Reliable</span>
               </button>
 
               <button
@@ -170,8 +172,8 @@ export const Contact: React.FC = () => {
                 onClick={() => setActiveTab('webform')}
                 className={`flex-1 py-2 text-xs font-semibold rounded-lg transition-all flex items-center justify-center gap-2 cursor-pointer ${
                   activeTab === 'webform'
-                    ? 'bg-white text-[#05070d] shadow-md'
-                    : 'text-[#94a3b8] hover:text-white'
+                    ? 'bg-[#FF6A00] text-[#050505] font-bold shadow-md shadow-[#FF6A00]/25'
+                    : 'text-[#A3A3A3] hover:text-white'
                 }`}
               >
                 <span>Web Form (FormSubmit)</span>
@@ -248,12 +250,12 @@ export const Contact: React.FC = () => {
                     className="btn-frosted-secondary text-xs py-3.5 px-4 justify-center no-underline"
                     id="open-mailto-btn"
                   >
-                    <Mail className="w-3.5 h-3.5 text-[#7182ff]" />
+                    <Mail className="w-3.5 h-3.5 text-[#FF6A00]" />
                     <span>Other Mail App</span>
                   </a>
                 </div>
 
-                <p className="text-[11px] text-[#64748b] text-center mt-2">
+                <p className="text-[11px] text-[#A3A3A3] text-center mt-2">
                   Opens Gmail directly with recipient <span className="text-white font-mono">fatiufaruk7@gmail.com</span> pre-filled.
                 </p>
               </div>
@@ -261,11 +263,11 @@ export const Contact: React.FC = () => {
               /* STANDARD WEB FORM POST (FormSubmit) */
               <div>
                 {webFormSubmitted && (
-                  <div className="mb-4 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-xs text-emerald-200 flex items-start gap-2.5">
-                    <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <div className="mb-4 p-4 rounded-xl bg-[#141414] border border-[#FF6A00]/40 text-xs text-[#A3A3A3] flex items-start gap-2.5">
+                    <Check className="w-4 h-4 text-[#FF8C00] shrink-0 mt-0.5" />
                     <div>
                       <strong className="block text-white font-medium">Form submitted!</strong>
-                      If you haven&apos;t yet activated FormSubmit, please check your inbox at <span className="underline">fatiufaruk7@gmail.com</span> to click the one-time activation link.
+                      If you haven&apos;t yet activated FormSubmit, please check your inbox at <span className="underline text-white">fatiufaruk7@gmail.com</span> to click the one-time activation link.
                     </div>
                   </div>
                 )}

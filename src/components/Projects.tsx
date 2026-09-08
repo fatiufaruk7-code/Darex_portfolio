@@ -9,13 +9,13 @@ export const Projects: React.FC = () => {
   const getProjectIcon = (id: string) => {
     switch (id) {
       case 'nexus-analytics':
-        return <PieChart className="w-7 h-7 text-blue-300" />;
+        return <PieChart className="w-7 h-7 text-[#FF8C00]" />;
       case 'aura-creative':
-        return <Sparkles className="w-7 h-7 text-purple-300" />;
+        return <Sparkles className="w-7 h-7 text-[#FF6A00]" />;
       case 'devflow-workspace':
-        return <Layers className="w-7 h-7 text-teal-300" />;
+        return <Layers className="w-7 h-7 text-[#FFA04D]" />;
       default:
-        return <PieChart className="w-7 h-7 text-blue-300" />;
+        return <PieChart className="w-7 h-7 text-[#FF8C00]" />;
     }
   };
 
@@ -122,12 +122,12 @@ export const Projects: React.FC = () => {
               </button>
             </div>
 
-            <div className="p-6 sm:p-8 bg-[#070a12]/90 backdrop-blur-xl">
+            <div className="p-6 sm:p-8 bg-[#0D0D0D] border-t border-[#262626]">
               <div className="flex flex-wrap gap-1.5 mb-3">
                 {selectedProject.tags.map((tag, idx) => (
                   <span 
                     key={idx} 
-                    className="text-[10px] px-2.5 py-1 rounded-md bg-white/[0.04] border border-white/10 text-[#94a3b8]"
+                    className="text-[10px] px-2.5 py-1 rounded-md bg-[#141414] border border-[#262626] text-[#A3A3A3]"
                   >
                     {tag}
                   </span>
@@ -135,11 +135,11 @@ export const Projects: React.FC = () => {
               </div>
 
               <h3 className="text-xl font-bold text-white mb-1.5">{selectedProject.title}</h3>
-              <p className="text-xs font-semibold text-[#7182ff] uppercase tracking-wider mb-4">
+              <p className="text-xs font-semibold text-[#FF6A00] uppercase tracking-wider mb-4">
                 {selectedProject.category}
               </p>
 
-              <p className="text-sm text-[#94a3b8] leading-relaxed mb-6">
+              <p className="text-sm text-[#A3A3A3] leading-relaxed mb-6">
                 {selectedProject.description}
               </p>
 
@@ -149,15 +149,15 @@ export const Projects: React.FC = () => {
                 </h4>
                 <ul className="space-y-2.5">
                   {selectedProject.highlights.map((h, i) => (
-                    <li key={i} className="flex items-start gap-2.5 text-xs text-[#94a3b8]">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                    <li key={i} className="flex items-start gap-2.5 text-xs text-[#A3A3A3]">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#FF6A00] shrink-0 mt-0.5" />
                       <span>{h}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="flex items-center gap-3 pt-5 border-t border-white/10">
+              <div className="flex items-center gap-3 pt-5 border-t border-[#262626]">
                 <a
                   href={selectedProject.githubUrl}
                   target="_blank"

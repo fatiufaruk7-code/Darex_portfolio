@@ -1,31 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b1020" />
-      <stop offset="50%" stop-color="#070a14" />
-      <stop offset="100%" stop-color="#05070d" />
+      <stop offset="0%" stop-color="#050505" />
+      <stop offset="50%" stop-color="#0D0D0D" />
+      <stop offset="100%" stop-color="#141414" />
     </linearGradient>
     <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="rgba(113, 130, 255, 0.5)" />
-      <stop offset="50%" stop-color="rgba(255, 255, 255, 0.15)" />
-      <stop offset="100%" stop-color="rgba(99, 102, 241, 0.2)" />
+      <stop offset="0%" stop-color="rgba(255, 106, 0, 0.6)" />
+      <stop offset="50%" stop-color="rgba(38, 38, 38, 0.8)" />
+      <stop offset="100%" stop-color="rgba(255, 140, 0, 0.3)" />
     </linearGradient>
     <radialGradient id="glow" cx="45%" cy="45%" r="60%">
-      <stop offset="0%" stop-color="#7182ff" stop-opacity="0.3" />
-      <stop offset="60%" stop-color="#4f46e5" stop-opacity="0.08" />
-      <stop offset="100%" stop-color="#0b1020" stop-opacity="0" />
+      <stop offset="0%" stop-color="#FF6A00" stop-opacity="0.3" />
+      <stop offset="60%" stop-color="#FF8C00" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#050505" stop-opacity="0" />
     </radialGradient>
     <linearGradient id="cGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="100%" stop-color="#e0e7ff" />
+      <stop offset="100%" stop-color="#e5e5e5" />
     </linearGradient>
     <linearGradient id="supGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#93c5fd" />
-      <stop offset="50%" stop-color="#7182ff" />
-      <stop offset="100%" stop-color="#4f46e5" />
+      <stop offset="0%" stop-color="#FFA04D" />
+      <stop offset="50%" stop-color="#FF6A00" />
+      <stop offset="100%" stop-color="#FF8C00" />
     </linearGradient>
     <filter id="subtleShadow" x="-10%" y="-10%" width="130%" height="130%">
-      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.6"/>
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.8"/>
     </filter>
   </defs>
 
@@ -47,7 +47,6 @@
       stroke-linecap="round" 
     />
 
-    <!-- Superscript '2' -->
     <!-- Geometric '2' with modern styling -->
     <path 
       d="M 360 145 C 360 125 375 110 398 110 C 420 110 436 125 436 145 C 436 168 410 192 360 235 L 440 235 L 440 210" 
@@ -58,7 +57,7 @@
       stroke-linejoin="round"
     />
 
-    <!-- Small Cyan Status Dot -->
-    <circle cx="438" cy="118" r="7" fill="#38bdf8" />
+    <!-- Orange Accent Status Dot -->
+    <circle cx="438" cy="118" r="7" fill="#FF8C00" />
   </g>
 </svg>

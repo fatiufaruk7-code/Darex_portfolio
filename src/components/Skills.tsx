@@ -59,8 +59,8 @@ export const Skills: React.FC = () => {
                 onClick={() => setActiveCategory(cat.id as any)}
                 className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                   activeCategory === cat.id
-                    ? 'bg-white text-[#05070d] shadow-lg shadow-white/10'
-                    : 'glass text-[#94a3b8] hover:text-white hover:bg-white/[0.08]'
+                    ? 'bg-[#FF6A00] text-[#050505] font-bold shadow-lg shadow-[#FF6A00]/25'
+                    : 'bg-[#141414] border border-[#262626] text-[#A3A3A3] hover:text-white hover:border-[#FF6A00]/40'
                 }`}
               >
                 {cat.label}

@@ -27,8 +27,8 @@ export const Hero: React.FC = () => {
       <div className="container hero-grid">
         <div className="reveal show">
           <div className="status-badge" id="hero-status">
-            <div className="status-dot-emerald"></div>
-            <span className="status-text-emerald">Ready for new projects</span>
+            <div className="status-dot-orange"></div>
+            <span className="status-text-orange">Ready for new projects</span>
           </div>
 
           <h1 className="tracking-tighter">
@@ -65,14 +65,14 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Frosted Proof Badges & Socials */}
-          <div className="flex flex-col sm:flex-row sm:items-center gap-6 mt-8 pt-6 border-t border-white/[0.07]">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-6 mt-8 pt-6 border-t border-[#262626]">
             <div className="flex items-center space-x-4">
               <div className="flex -space-x-3">
-                <div className="w-9 h-9 rounded-full border-2 border-[#05070d] bg-blue-500/90 backdrop-blur-md flex items-center justify-center text-[10px] font-bold text-white shadow-md">React</div>
-                <div className="w-9 h-9 rounded-full border-2 border-[#05070d] bg-purple-500/90 backdrop-blur-md flex items-center justify-center text-[10px] font-bold text-white shadow-md">Node</div>
-                <div className="w-9 h-9 rounded-full border-2 border-[#05070d] bg-emerald-500/90 backdrop-blur-md flex items-center justify-center text-[10px] font-bold text-white shadow-md">TS</div>
+                <div className="w-9 h-9 rounded-full border-2 border-[#050505] bg-[#141414] border-[#262626] flex items-center justify-center text-[10px] font-bold text-[#FF8C00] shadow-md">React</div>
+                <div className="w-9 h-9 rounded-full border-2 border-[#050505] bg-[#141414] border-[#262626] flex items-center justify-center text-[10px] font-bold text-[#FF6A00] shadow-md">Node</div>
+                <div className="w-9 h-9 rounded-full border-2 border-[#050505] bg-[#141414] border-[#262626] flex items-center justify-center text-[10px] font-bold text-[#FFA04D] shadow-md">TS</div>
               </div>
-              <span className="text-xs opacity-50 font-medium">3+ years modern web experience</span>
+              <span className="text-xs text-[#A3A3A3] font-medium">3+ years modern web experience</span>
             </div>
 
             <div className="socials sm:ml-auto">
@@ -95,7 +95,7 @@ export const Hero: React.FC = () => {
                 title={`Chat on WhatsApp (${personalInfo.socials.whatsappNumber})`}
                 id="social-whatsapp"
               >
-                <MessageCircle className="w-4 h-4 text-emerald-400" />
+                <MessageCircle className="w-4 h-4 text-[#FF8C00]" />
               </a>
             </div>
           </div>
@@ -121,8 +121,8 @@ export const Hero: React.FC = () => {
               >
                 {copied ? (
                   <>
-                    <Check className="w-3.5 h-3.5 text-emerald-400" />
-                    <span className="text-emerald-400">Copied</span>
+                    <Check className="w-3.5 h-3.5 text-[#FF8C00]" />
+                    <span className="text-[#FF8C00]">Copied</span>
                   </>
                 ) : (
                   <>
