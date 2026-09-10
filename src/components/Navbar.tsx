@@ -21,10 +21,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
 
   const navItems = [
     { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'skills', label: 'Skills' },
+    { id: 'services', label: 'Services' },
+    { id: 'pricing', label: 'Pricing' },
     { id: 'projects', label: 'Projects' },
-    { id: 'process', label: 'Process' },
+    { id: 'about', label: 'About' },
     { id: 'contact', label: 'Contact' },
   ];
 

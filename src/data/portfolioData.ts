@@ -1,13 +1,16 @@
-import { AboutCard, ProcessStep, ProjectItem, SkillItem } from '../types.ts';
+import { AboutCard, ProcessStep, ProjectItem, SkillItem, ServiceItem, PricingPackage } from '../types.ts';
 
 export const personalInfo = {
-  name: "Clarity",
+  name: "Fatiu Faruk",
+  preferredName: "Clarity",
   brandName: "Clarity Creative",
   logoTag: "C²",
-  role: "Web Developer & Code Enthusiast",
-  status: "Available for projects",
-  bioHeadline: "Turning ideas into digital experiences.",
-  shortDescription: "I build modern, responsive and interactive websites that turn ideas into real digital experiences.",
+  supportingTitle: "Web Developer • Founder of Clarity Creative",
+  headline: "Modern Websites. Clear Solutions.",
+  role: "Web Developer & Founder of Clarity Creative",
+  status: "Available for freelance projects",
+  bioHeadline: "Modern Websites. Clear Solutions.",
+  shortDescription: "I build fast, responsive and professional websites for businesses, organizations and individuals.",
   email: "fatiufaruk7@gmail.com",
   location: "Available Worldwide / Remote",
   experience: "3+ Years Building for Web",
@@ -19,15 +22,116 @@ export const personalInfo = {
 };
 
 export const codeSnippetString = `const developer = {
-    name: "Clarity",
+    name: "Fatiu Faruk",
+    brand: "Clarity Creative",
     role: "Web Developer",
-    passion: "Coding",
-    mindset: "Keep Learning"
+    headline: "Modern Websites. Clear Solutions.",
+    status: "Available for freelance projects"
 };
 
-function create() {
-    return "Something Amazing";
+function buildWebsite(client) {
+    return {
+        speed: "Blazing Fast",
+        design: "Clean & Responsive",
+        solution: "Tailored to Your Goals"
+    };
 }`;
+
+export const servicesData: ServiceItem[] = [
+  {
+    id: "business-websites",
+    title: "Business Websites",
+    description: "Professional responsive websites that give your business a strong online presence.",
+    iconName: "Briefcase"
+  },
+  {
+    id: "landing-pages",
+    title: "Landing Pages",
+    description: "High-converting landing pages designed to present your product, service or campaign clearly.",
+    iconName: "Target"
+  },
+  {
+    id: "ecommerce-websites",
+    title: "E-commerce Websites",
+    description: "Modern online stores that make it easier for customers to discover and purchase your products.",
+    iconName: "ShoppingBag"
+  },
+  {
+    id: "school-portals",
+    title: "School Portals",
+    description: "Functional websites and portals designed for schools, students, staff and administrators.",
+    iconName: "GraduationCap"
+  },
+  {
+    id: "web-applications",
+    title: "Web Applications",
+    description: "Interactive web applications built around your specific business or organizational needs.",
+    iconName: "Layers"
+  },
+  {
+    id: "progressive-web-apps",
+    title: "Progressive Web Apps",
+    description: "Fast, installable web experiences that work across phones, tablets and desktop devices.",
+    iconName: "Smartphone"
+  }
+];
+
+export const pricingPackagesData: PricingPackage[] = [
+  {
+    id: "starter",
+    name: "Starter",
+    price: "From ₦30,000",
+    bestFor: "Personal websites and simple landing pages.",
+    features: [
+      "Responsive design",
+      "Up to 3 sections/pages",
+      "Mobile optimization",
+      "Contact integration",
+      "Basic SEO",
+      "Deployment"
+    ],
+    ctaText: "Get Started",
+    budgetRange: "₦30k – ₦50k"
+  },
+  {
+    id: "business",
+    name: "Business",
+    price: "From ₦50,000",
+    badge: "Most Popular",
+    popular: true,
+    bestFor: "Businesses that need a professional online presence.",
+    features: [
+      "Professional responsive design",
+      "Up to 6 pages",
+      "Contact / WhatsApp integration",
+      "Basic SEO",
+      "Social media integration",
+      "Deployment",
+      "PWA option"
+    ],
+    ctaText: "Start a Project",
+    budgetRange: "₦50k – ₦80k"
+  },
+  {
+    id: "premium",
+    name: "Premium",
+    price: "From ₦80,000",
+    bestFor: "Organizations and businesses needing advanced functionality.",
+    features: [
+      "Custom UI/UX",
+      "Multiple pages",
+      "Advanced functionality",
+      "Database/API integration where required",
+      "SEO optimization",
+      "Analytics",
+      "PWA support",
+      "Deployment",
+      "Post-launch support"
+    ],
+    ctaText: "Request a Quote",
+    budgetRange: "₦80k – ₦100k"
+  }
+];
 
 export const aboutCards: AboutCard[] = [
   {

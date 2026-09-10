@@ -30,7 +30,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <ul className="footer-nav hidden md:flex">
-          {['home', 'about', 'skills', 'projects', 'process', 'contact'].map((sec) => (
+          {['home', 'services', 'pricing', 'projects', 'about', 'contact'].map((sec) => (
             <li key={sec}>
               <a 
                 href={`#${sec}`} 

@@ -31,6 +31,25 @@ export interface ProcessStep {
   details: string[];
 }
 
+export interface ServiceItem {
+  id: string;
+  title: string;
+  description: string;
+  iconName: string;
+}
+
+export interface PricingPackage {
+  id: string;
+  name: string;
+  price: string;
+  badge?: string;
+  popular?: boolean;
+  bestFor: string;
+  features: string[];
+  ctaText: string;
+  budgetRange?: string;
+}
+
 export interface AboutCard {
   title: string;
   icon: string;

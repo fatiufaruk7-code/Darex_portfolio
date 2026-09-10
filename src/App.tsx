@@ -7,6 +7,8 @@ import { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar.tsx';
 import { Hero } from './components/Hero.tsx';
 import { About } from './components/About.tsx';
+import { Services } from './components/Services.tsx';
+import { Pricing } from './components/Pricing.tsx';
 import { Skills } from './components/Skills.tsx';
 import { Projects } from './components/Projects.tsx';
 import { Process } from './components/Process.tsx';
@@ -39,7 +41,7 @@ export default function App() {
     reveals.forEach((el) => revealObserver.observe(el));
 
     // Active navigation section observer
-    const sectionIds = ['home', 'about', 'skills', 'projects', 'process', 'contact'];
+    const sectionIds = ['home', 'about', 'services', 'pricing', 'projects', 'skills', 'process', 'contact'];
     const handleSectionScroll = () => {
       const scrollPosition = window.scrollY + 200;
 
@@ -76,8 +78,10 @@ export default function App() {
       <main className="relative z-10">
         <Hero />
         <About />
-        <Skills />
+        <Services />
+        <Pricing />
         <Projects />
+        <Skills />
         <Process />
         <Contact />
       </main>
