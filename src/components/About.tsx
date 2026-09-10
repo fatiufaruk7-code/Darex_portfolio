@@ -47,7 +47,7 @@ export const About: React.FC = () => {
 
           <div className="about-cards reveal show">
             <div className="about-card-frosted" id="about-card-dev">
-              <div className="mb-4 text-[#7182ff]">
+              <div className="mb-4 text-[#FF6A00]">
                 <Code className="w-6 h-6" />
               </div>
               <h3>Web Developer</h3>
@@ -55,7 +55,7 @@ export const About: React.FC = () => {
             </div>
 
             <div className="about-card-frosted" id="about-card-student">
-              <div className="mb-4 text-[#7182ff]">
+              <div className="mb-4 text-[#FF6A00]">
                 <GraduationCap className="w-6 h-6" />
               </div>
               <h3>Student</h3>
@@ -63,7 +63,7 @@ export const About: React.FC = () => {
             </div>
 
             <div className="about-card-frosted" id="about-card-creative">
-              <div className="mb-4 text-[#7182ff]">
+              <div className="mb-4 text-[#FF6A00]">
                 <Lightbulb className="w-6 h-6" />
               </div>
               <h3>Creative</h3>
@@ -71,7 +71,7 @@ export const About: React.FC = () => {
             </div>
 
             <div className="about-card-frosted" id="about-card-problem-solver">
-              <div className="mb-4 text-[#7182ff]">
+              <div className="mb-4 text-[#FF6A00]">
                 <Puzzle className="w-6 h-6" />
               </div>
               <h3>Problem Solver</h3>

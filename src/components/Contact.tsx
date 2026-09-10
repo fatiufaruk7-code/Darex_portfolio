@@ -78,20 +78,20 @@ export const Contact: React.FC = () => {
 
             <div className="contact-info">
               <div className="contact-info-item">
-                <Mail className="w-4 h-4 text-[#7182ff]" />
+                <Mail className="w-4 h-4 text-[#FF6A00]" />
                 <a href={`mailto:${personalInfo.email}`} className="hover:underline font-mono text-xs">
                   {personalInfo.email}
                 </a>
                 <button
                   type="button"
                   onClick={copyEmail}
-                  className="ml-2 text-xs text-[#7182ff] hover:text-white p-1 rounded transition-colors inline-flex items-center gap-1 cursor-pointer"
+                  className="ml-2 text-xs text-[#FF8C00] hover:text-white p-1 rounded transition-colors inline-flex items-center gap-1 cursor-pointer"
                   title="Copy email to clipboard"
                 >
                   {copiedEmail ? (
                     <>
-                      <Check className="w-3.5 h-3.5 text-emerald-400" />
-                      <span className="text-[10px] text-emerald-400 font-sans">Copied</span>
+                      <Check className="w-3.5 h-3.5 text-[#FF8C00]" />
+                      <span className="text-[10px] text-[#FF8C00] font-sans">Copied</span>
                     </>
                   ) : (
                     <>
