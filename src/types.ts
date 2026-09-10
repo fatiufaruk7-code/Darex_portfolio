@@ -12,8 +12,11 @@ export interface ProjectItem {
   id: string;
   title: string;
   category: string;
+  projectType?: 'Concept' | 'Personal Project' | 'Demo Project';
   tags: string[];
   description: string;
+  overview?: string;
+  objective?: string;
   previewClass: string;
   previewGradient: string;
   previewIcon: string;
