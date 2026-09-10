@@ -40,6 +40,9 @@ export interface AboutCard {
 export interface ContactFormData {
   name: string;
   email: string;
-  subject: string;
+  whatsapp?: string;
+  projectType?: string;
+  budget?: string;
   message: string;
+  subject?: string;
 }

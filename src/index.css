@@ -1084,6 +1084,7 @@ header.scrolled {
 }
 
 .form-group input,
+.form-group select,
 .form-group textarea {
   width: 100%;
   background: #0D0D0D;
@@ -1098,7 +1099,24 @@ header.scrolled {
   transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }
 
+.form-group select {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23FF6A00' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+}
+
+.form-group select option {
+  background-color: #141414;
+  color: #FFFFFF;
+  padding: 10px;
+}
+
 .form-group input:focus,
+.form-group select:focus,
 .form-group textarea:focus {
   border-color: #FF6A00;
   background: #141414;
