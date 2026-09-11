@@ -1,63 +1,63 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#050505" />
-      <stop offset="50%" stop-color="#0D0D0D" />
-      <stop offset="100%" stop-color="#141414" />
+      <stop offset="0%" stop-color="#0D1220" />
+      <stop offset="50%" stop-color="#080B14" />
+      <stop offset="100%" stop-color="#05070E" />
     </linearGradient>
     <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="rgba(255, 106, 0, 0.6)" />
-      <stop offset="50%" stop-color="rgba(38, 38, 38, 0.8)" />
-      <stop offset="100%" stop-color="rgba(255, 140, 0, 0.3)" />
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.5" />
+      <stop offset="50%" stop-color="#1E293B" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0.3" />
     </linearGradient>
-    <radialGradient id="glow" cx="45%" cy="45%" r="60%">
-      <stop offset="0%" stop-color="#FF6A00" stop-opacity="0.3" />
-      <stop offset="60%" stop-color="#FF8C00" stop-opacity="0.08" />
-      <stop offset="100%" stop-color="#050505" stop-opacity="0" />
+    <radialGradient id="glow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#2563EB" stop-opacity="0.25" />
+      <stop offset="60%" stop-color="#3B82F6" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#080B14" stop-opacity="0" />
     </radialGradient>
     <linearGradient id="cGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="100%" stop-color="#e5e5e5" />
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#CBD5E1" />
     </linearGradient>
-    <linearGradient id="supGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFA04D" />
-      <stop offset="50%" stop-color="#FF6A00" />
-      <stop offset="100%" stop-color="#FF8C00" />
+    <linearGradient id="dGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60A5FA" />
+      <stop offset="50%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#2563EB" />
     </linearGradient>
     <filter id="subtleShadow" x="-10%" y="-10%" width="130%" height="130%">
-      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.8"/>
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.7"/>
     </filter>
   </defs>
 
   <!-- Background Base -->
   <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
-  <rect width="508" height="508" x="2" y="2" rx="110" fill="none" stroke="url(#borderGrad)" stroke-width="3" />
+  <rect width="506" height="506" x="3" y="3" rx="109" fill="none" stroke="url(#borderGrad)" stroke-width="2.5" />
   
   <!-- Ambient Inner Glow -->
-  <circle cx="240" cy="240" r="190" fill="url(#glow)" />
+  <circle cx="256" cy="256" r="190" fill="url(#glow)" />
 
-  <!-- Monogram Logo C² -->
+  <!-- CD Monogram (Champz Digital) -->
   <g filter="url(#subtleShadow)">
-    <!-- Stylized Precision 'C' Arc -->
+    <!-- Geometric 'C' Arc -->
     <path 
-      d="M 315 175 C 290 145 255 130 210 130 C 138 130 85 185 85 256 C 85 327 138 382 210 382 C 260 382 295 362 320 328" 
+      d="M 224 162 C 160 162 116 206 116 256 C 116 306 160 350 224 350" 
       fill="none" 
       stroke="url(#cGrad)" 
-      stroke-width="52" 
+      stroke-width="42" 
       stroke-linecap="round" 
     />
 
-    <!-- Geometric '2' with modern styling -->
+    <!-- Geometric 'D' Stem and Lobe -->
     <path 
-      d="M 360 145 C 360 125 375 110 398 110 C 420 110 436 125 436 145 C 436 168 410 192 360 235 L 440 235 L 440 210" 
+      d="M 276 162 L 276 350 M 276 162 C 344 162 396 202 396 256 C 396 310 344 350 276 350" 
       fill="none" 
-      stroke="url(#supGrad)" 
-      stroke-width="26" 
+      stroke="url(#dGrad)" 
+      stroke-width="42" 
       stroke-linecap="round" 
       stroke-linejoin="round"
     />
 
-    <!-- Orange Accent Status Dot -->
-    <circle cx="438" cy="118" r="7" fill="#FF8C00" />
+    <!-- Electric Cyan Precision Status Dot -->
+    <circle cx="396" cy="168" r="8.5" fill="#22D3EE" />
   </g>
 </svg>

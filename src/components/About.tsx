@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Code, GraduationCap, Lightbulb, Puzzle } from 'lucide-react';
+import { ArrowRight, Code, Layers, Lightbulb, Puzzle } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData.ts';
 
 export const About: React.FC = () => {
@@ -13,7 +13,7 @@ export const About: React.FC = () => {
     <section className="about section" id="about">
       <div className="container">
         <div className="section-title reveal show">
-          <p>01 — ABOUT ME</p>
+          <p>01 — ABOUT</p>
           <h2>
             Turning ideas into
             <br className="hidden sm:inline" /> <span>digital experiences.</span>
@@ -23,15 +23,11 @@ export const About: React.FC = () => {
         <div className="about-grid">
           <div className="about-text reveal show">
             <p>
-              I&apos;m {personalInfo.name}, a Computer Science student and web developer
-              passionate about technology, coding, and creating intuitive digital
-              experiences that balance performance with elegant design.
+              At {personalInfo.brandName}, we build fast, responsive and professional websites and digital solutions for businesses, organizations and individuals.
             </p>
 
             <p>
-              I enjoy taking complex ideas and transforming them into clean, responsive,
-              and user-friendly websites. I am constantly refining my skills, exploring
-              modern web standards, and building products with attention to detail.
+              We transform complex ideas into clean, high-performance, and user-friendly digital experiences. Every project is developed with modern web standards, meticulous attention to detail, and a focus on measurable results.
             </p>
 
             <a 
@@ -47,35 +43,35 @@ export const About: React.FC = () => {
 
           <div className="about-cards reveal show">
             <div className="about-card-frosted" id="about-card-dev">
-              <div className="mb-4 text-[#FF6A00]">
+              <div className="mb-4 text-[#3B82F6]">
                 <Code className="w-6 h-6" />
               </div>
-              <h3>Web Developer</h3>
+              <h3>Web Development</h3>
               <p>Building modern, performant web experiences.</p>
             </div>
 
-            <div className="about-card-frosted" id="about-card-student">
-              <div className="mb-4 text-[#FF6A00]">
-                <GraduationCap className="w-6 h-6" />
+            <div className="about-card-frosted" id="about-card-solutions">
+              <div className="mb-4 text-[#3B82F6]">
+                <Layers className="w-6 h-6" />
               </div>
-              <h3>Student</h3>
-              <p>Studying Computer Science and scalable systems.</p>
+              <h3>Digital Solutions</h3>
+              <p>Designing tailored systems that scale with your goals.</p>
             </div>
 
             <div className="about-card-frosted" id="about-card-creative">
-              <div className="mb-4 text-[#FF6A00]">
+              <div className="mb-4 text-[#3B82F6]">
                 <Lightbulb className="w-6 h-6" />
               </div>
-              <h3>Creative</h3>
-              <p>Turning visionary ideas into pragmatic solutions.</p>
+              <h3>Creative UI/UX</h3>
+              <p>Turning ambitious visions into intuitive interfaces.</p>
             </div>
 
             <div className="about-card-frosted" id="about-card-problem-solver">
-              <div className="mb-4 text-[#FF6A00]">
+              <div className="mb-4 text-[#3B82F6]">
                 <Puzzle className="w-6 h-6" />
               </div>
-              <h3>Problem Solver</h3>
-              <p>Writing clean, maintainable, and resilient code.</p>
+              <h3>Clean Code</h3>
+              <p>Writing clean, maintainable, and resilient codebases.</p>
             </div>
           </div>
         </div>

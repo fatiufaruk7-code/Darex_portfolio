@@ -39,9 +39,9 @@ export const Skills: React.FC = () => {
       <div className="container">
         <div className="section-title reveal show flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
-            <p>02 — MY TECH STACK</p>
+            <p>02 — TECH STACK</p>
             <h2>
-              Technologies I
+              Technologies we
               <br className="hidden sm:inline" /> <span>work with.</span>
             </h2>
           </div>
@@ -59,8 +59,8 @@ export const Skills: React.FC = () => {
                 onClick={() => setActiveCategory(cat.id as any)}
                 className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-200 cursor-pointer ${
                   activeCategory === cat.id
-                    ? 'bg-[#FF6A00] text-[#050505] font-bold shadow-lg shadow-[#FF6A00]/25'
-                    : 'bg-[#141414] border border-[#262626] text-[#A3A3A3] hover:text-white hover:border-[#FF6A00]/40'
+                    ? 'bg-[#2563EB] text-white font-bold shadow-md shadow-[#2563EB]/25'
+                    : 'bg-[#111827] border border-[#1E293B] text-[#94A3B8] hover:text-[#F8FAFC] hover:border-[#3B82F6]/40'
                 }`}
               >
                 {cat.label}

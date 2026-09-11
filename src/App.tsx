@@ -67,7 +67,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen selection:bg-[#FF6A00]/30 selection:text-white overflow-hidden">
+    <div className="relative min-h-screen selection:bg-[#2563EB]/30 selection:text-white overflow-hidden">
       {/* Frosted Glass Ambient Mesh Gradients */}
       <div className="mesh-1" aria-hidden="true" />
       <div className="mesh-2" aria-hidden="true" />

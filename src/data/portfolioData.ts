@@ -1,19 +1,20 @@
 import { AboutCard, ProcessStep, ProjectItem, SkillItem, ServiceItem, PricingPackage } from '../types.ts';
 
 export const personalInfo = {
-  name: "Fatiu Faruk",
-  preferredName: "Clarity",
-  brandName: "Clarity Creative",
-  logoTag: "C²",
-  supportingTitle: "Web Developer • Founder of Clarity Creative",
-  headline: "Modern Websites. Clear Solutions.",
-  role: "Web Developer & Founder of Clarity Creative",
-  status: "Available for freelance projects",
-  bioHeadline: "Modern Websites. Clear Solutions.",
-  shortDescription: "I build fast, responsive and professional websites for businesses, organizations and individuals.",
+  name: "Champz Digital",
+  preferredName: "Champz",
+  brandName: "Champz Digital",
+  logoTag: "CD",
+  supportingTitle: "Web Development • Digital Solutions",
+  headline: "Modern Websites. Digital Solutions.",
+  tagline: "Modern Websites. Digital Solutions.",
+  role: "Web Development • Digital Solutions",
+  status: "Available for projects",
+  bioHeadline: "Modern Websites. Digital Solutions.",
+  shortDescription: "We build fast, responsive and professional websites for businesses, organizations and individuals.",
   email: "fatiufaruk7@gmail.com",
   location: "Available Worldwide / Remote",
-  experience: "3+ Years Building for Web",
+  experience: "Professional Web Development & Digital Solutions",
   socials: {
     twitter: "https://x.com/Toriblackm8j9",
     whatsapp: "https://wa.me/2348137941486",
@@ -21,12 +22,11 @@ export const personalInfo = {
   }
 };
 
-export const codeSnippetString = `const developer = {
-    name: "Fatiu Faruk",
-    brand: "Clarity Creative",
-    role: "Web Developer",
-    headline: "Modern Websites. Clear Solutions.",
-    status: "Available for freelance projects"
+export const codeSnippetString = `const brand = {
+    name: "Champz Digital",
+    focus: "Web Development",
+    mission: "Modern Websites. Digital Solutions.",
+    status: "Available for projects"
 };
 
 function buildWebsite(client) {
@@ -35,7 +35,7 @@ function buildWebsite(client) {
         design: "Clean & Responsive",
         solution: "Tailored to Your Goals"
     };
-}`;
+};`;
 
 export const servicesData: ServiceItem[] = [
   {

@@ -52,13 +52,13 @@ export const Contact: React.FC = () => {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'fallback'>('idle');
 
   const defaultWhatsAppText = encodeURIComponent(
-    "Hello Clarity Creative, I'd like to discuss a website project."
+    "Hello Champz Digital, I'd like to discuss a website project."
   );
 
   const getCustomWhatsAppUrl = () => {
-    let text = "Hello Clarity Creative, I'd like to discuss a website project.";
+    let text = "Hello Champz Digital, I'd like to discuss a website project.";
     if (formData.name || formData.projectType) {
-      text = `Hello Clarity Creative,\nMy name is ${formData.name || 'a visitor'}. I'm interested in a ${formData.projectType || 'website'} project.\nBudget: ${formData.budget || 'Not specified'}.\n\nMessage: ${formData.message || 'I would like to discuss working together.'}`;
+      text = `Hello Champz Digital,\nMy name is ${formData.name || 'a visitor'}. I'm interested in a ${formData.projectType || 'website'} project.\nBudget: ${formData.budget || 'Not specified'}.\n\nMessage: ${formData.message || 'I would like to discuss working together.'}`;
     }
     return `https://wa.me/2348137941486?text=${encodeURIComponent(text)}`;
   };
@@ -68,7 +68,7 @@ export const Contact: React.FC = () => {
       `Project Inquiry: ${formData.projectType || 'Website'} - ${formData.name || 'Client'}`
     );
     const body = encodeURIComponent(
-      `Hi Clarity Creative,\n\nName: ${formData.name || 'N/A'}\nEmail: ${formData.email || 'N/A'}\nWhatsApp: ${formData.whatsapp || 'N/A'}\nProject Type: ${formData.projectType || 'N/A'}\nBudget: ${formData.budget || 'N/A'}\n\nProject Details:\n${formData.message || 'I would like to discuss a project with you.'}`
+      `Hi Champz Digital,\n\nName: ${formData.name || 'N/A'}\nEmail: ${formData.email || 'N/A'}\nWhatsApp: ${formData.whatsapp || 'N/A'}\nProject Type: ${formData.projectType || 'N/A'}\nBudget: ${formData.budget || 'N/A'}\n\nProject Details:\n${formData.message || 'I would like to discuss a project with you.'}`
     );
     return `mailto:${personalInfo.email}?subject=${subject}&body=${body}`;
   };
@@ -173,20 +173,20 @@ export const Contact: React.FC = () => {
               </p>
 
               {/* Clean Contact Information Card */}
-              <div className="mt-8 p-6 rounded-2xl bg-[#0D0D0D] border border-[#262626] space-y-4 shadow-xl">
+              <div className="mt-8 p-6 rounded-2xl bg-[#0D1220] border border-[#1E293B] space-y-4 shadow-xl">
                 {/* Email */}
-                <div className="flex items-start justify-between gap-3 pb-3.5 border-b border-[#1F1F1F]">
+                <div className="flex items-start justify-between gap-3 pb-3.5 border-b border-[#1E293B]">
                   <div className="flex items-center gap-3 min-w-0">
-                    <div className="w-8 h-8 rounded-lg bg-[#FF6A00]/10 border border-[#FF6A00]/20 flex items-center justify-center shrink-0 text-[#FF6A00]">
+                    <div className="w-8 h-8 rounded-lg bg-[#2563EB]/15 border border-[#3B82F6]/30 flex items-center justify-center shrink-0 text-[#3B82F6]">
                       <Mail className="w-4 h-4" />
                     </div>
                     <div className="min-w-0">
-                      <span className="block text-[10px] font-bold uppercase tracking-wider text-[#737373]">
+                      <span className="block text-[10px] font-bold uppercase tracking-wider text-[#64748B]">
                         Email
                       </span>
                       <a 
                         href={`mailto:${personalInfo.email}`} 
-                        className="text-xs sm:text-sm font-mono text-white hover:text-[#FF8C00] transition-colors truncate block"
+                        className="text-xs sm:text-sm font-mono text-[#F8FAFC] hover:text-[#60A5FA] transition-colors truncate block"
                         title="Send email"
                       >
                         {personalInfo.email}
@@ -197,12 +197,12 @@ export const Contact: React.FC = () => {
                   <button
                     type="button"
                     onClick={copyEmail}
-                    className="p-1.5 rounded-md text-[#737373] hover:text-[#FF8C00] hover:bg-[#1A1A1A] transition-colors shrink-0"
+                    className="p-1.5 rounded-md text-[#64748B] hover:text-[#60A5FA] hover:bg-[#162032] transition-colors shrink-0"
                     title="Copy email"
                     aria-label="Copy email address"
                   >
                     {copiedEmail ? (
-                      <Check className="w-3.5 h-3.5 text-[#FF8C00]" />
+                      <Check className="w-3.5 h-3.5 text-[#3B82F6]" />
                     ) : (
                       <Copy className="w-3.5 h-3.5" />
                     )}
@@ -210,20 +210,20 @@ export const Contact: React.FC = () => {
                 </div>
 
                 {/* WhatsApp */}
-                <div className="flex items-start justify-between gap-3 pb-3.5 border-b border-[#1F1F1F]">
+                <div className="flex items-start justify-between gap-3 pb-3.5 border-b border-[#1E293B]">
                   <div className="flex items-center gap-3 min-w-0">
-                    <div className="w-8 h-8 rounded-lg bg-[#FF6A00]/10 border border-[#FF6A00]/20 flex items-center justify-center shrink-0 text-[#FF8C00]">
+                    <div className="w-8 h-8 rounded-lg bg-[#2563EB]/15 border border-[#3B82F6]/30 flex items-center justify-center shrink-0 text-[#3B82F6]">
                       <MessageCircle className="w-4 h-4" />
                     </div>
                     <div className="min-w-0">
-                      <span className="block text-[10px] font-bold uppercase tracking-wider text-[#737373]">
+                      <span className="block text-[10px] font-bold uppercase tracking-wider text-[#64748B]">
                         WhatsApp
                       </span>
                       <a 
                         href={`https://wa.me/2348137941486?text=${defaultWhatsAppText}`} 
                         target="_blank" 
                         rel="noreferrer"
-                        className="text-xs sm:text-sm font-mono text-white hover:text-[#FF8C00] transition-colors truncate block"
+                        className="text-xs sm:text-sm font-mono text-[#F8FAFC] hover:text-[#60A5FA] transition-colors truncate block"
                         title="Open WhatsApp chat"
                       >
                         {personalInfo.socials.whatsappNumber}
@@ -234,12 +234,12 @@ export const Contact: React.FC = () => {
                   <button
                     type="button"
                     onClick={copyWhatsAppNumber}
-                    className="p-1.5 rounded-md text-[#737373] hover:text-[#FF8C00] hover:bg-[#1A1A1A] transition-colors shrink-0"
+                    className="p-1.5 rounded-md text-[#64748B] hover:text-[#60A5FA] hover:bg-[#162032] transition-colors shrink-0"
                     title="Copy WhatsApp number"
                     aria-label="Copy WhatsApp number"
                   >
                     {copiedWhatsApp ? (
-                      <Check className="w-3.5 h-3.5 text-[#FF8C00]" />
+                      <Check className="w-3.5 h-3.5 text-[#3B82F6]" />
                     ) : (
                       <Copy className="w-3.5 h-3.5" />
                     )}
@@ -247,20 +247,20 @@ export const Contact: React.FC = () => {
                 </div>
 
                 {/* X / Twitter */}
-                <div className="flex items-start justify-between gap-3 pb-3.5 border-b border-[#1F1F1F]">
+                <div className="flex items-start justify-between gap-3 pb-3.5 border-b border-[#1E293B]">
                   <div className="flex items-center gap-3 min-w-0">
-                    <div className="w-8 h-8 rounded-lg bg-[#FF6A00]/10 border border-[#FF6A00]/20 flex items-center justify-center shrink-0 text-[#FF6A00]">
+                    <div className="w-8 h-8 rounded-lg bg-[#2563EB]/15 border border-[#3B82F6]/30 flex items-center justify-center shrink-0 text-[#3B82F6]">
                       <Twitter className="w-4 h-4" />
                     </div>
                     <div className="min-w-0">
-                      <span className="block text-[10px] font-bold uppercase tracking-wider text-[#737373]">
+                      <span className="block text-[10px] font-bold uppercase tracking-wider text-[#64748B]">
                         X / Twitter
                       </span>
                       <a 
                         href={personalInfo.socials.twitter} 
                         target="_blank" 
                         rel="noreferrer"
-                        className="text-xs sm:text-sm font-mono text-white hover:text-[#FF8C00] transition-colors truncate block"
+                        className="text-xs sm:text-sm font-mono text-[#F8FAFC] hover:text-[#60A5FA] transition-colors truncate block"
                         title="View profile on X (Twitter)"
                       >
                         @Toriblackm8j9
@@ -270,36 +270,36 @@ export const Contact: React.FC = () => {
                 </div>
 
                 {/* Availability */}
-                <div className="flex items-center justify-between gap-3 pb-3.5 border-b border-[#1F1F1F]">
+                <div className="flex items-center justify-between gap-3 pb-3.5 border-b border-[#1E293B]">
                   <div className="flex items-center gap-3 min-w-0">
-                    <div className="w-8 h-8 rounded-lg bg-[#FF6A00]/10 border border-[#FF6A00]/20 flex items-center justify-center shrink-0 text-[#FF6A00]">
+                    <div className="w-8 h-8 rounded-lg bg-[#2563EB]/15 border border-[#3B82F6]/30 flex items-center justify-center shrink-0 text-[#3B82F6]">
                       <Globe className="w-4 h-4" />
                     </div>
                     <div>
-                      <span className="block text-[10px] font-bold uppercase tracking-wider text-[#737373]">
+                      <span className="block text-[10px] font-bold uppercase tracking-wider text-[#64748B]">
                         Availability
                       </span>
-                      <span className="text-xs sm:text-sm text-[#E5E5E5] font-medium">
+                      <span className="text-xs sm:text-sm text-[#E2E8F0] font-medium">
                         {personalInfo.location}
                       </span>
                     </div>
                   </div>
-                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#FF6A00]/15 text-[#FF8C00] border border-[#FF6A00]/30 shrink-0">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#FF8C00] animate-pulse"></span>
+                  <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#2563EB]/15 text-[#60A5FA] border border-[#3B82F6]/30 shrink-0">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#3B82F6] animate-pulse"></span>
                     Open
                   </span>
                 </div>
 
                 {/* Response Time */}
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-[#FF6A00]/10 border border-[#FF6A00]/20 flex items-center justify-center shrink-0 text-[#FF6A00]">
+                  <div className="w-8 h-8 rounded-lg bg-[#2563EB]/15 border border-[#3B82F6]/30 flex items-center justify-center shrink-0 text-[#3B82F6]">
                     <Clock className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="block text-[10px] font-bold uppercase tracking-wider text-[#737373]">
+                    <span className="block text-[10px] font-bold uppercase tracking-wider text-[#64748B]">
                       Response Time
                     </span>
-                    <span className="text-xs sm:text-sm text-[#E5E5E5] font-medium">
+                    <span className="text-xs sm:text-sm text-[#E2E8F0] font-medium">
                       Usually within 24 hours
                     </span>
                   </div>
@@ -308,29 +308,29 @@ export const Contact: React.FC = () => {
             </div>
 
             {/* Direct Action Buttons */}
-            <div className="mt-8 pt-6 border-t border-[#262626] flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <div className="mt-8 pt-6 border-t border-[#1E293B] flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               {/* Primary CTA: WhatsApp */}
               <a
                 href={`https://wa.me/2348137941486?text=${defaultWhatsAppText}`}
                 target="_blank"
                 rel="noreferrer"
                 id="whatsapp-primary-cta"
-                className="flex-1 flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-[#FF6A00] hover:bg-[#FF7A18] text-[#050505] font-extrabold text-sm tracking-wide shadow-lg shadow-[#FF6A00]/25 transition-all hover:scale-[1.02] active:scale-[0.98] no-underline cursor-pointer"
+                className="flex-1 flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-extrabold text-sm tracking-wide shadow-md shadow-[#2563EB]/25 transition-all hover:scale-[1.02] active:scale-[0.98] no-underline cursor-pointer"
                 title="Chat on WhatsApp (08137941486)"
               >
-                <MessageCircle className="w-4 h-4 fill-current text-[#050505]" />
+                <MessageCircle className="w-4 h-4 fill-current text-white" />
                 <span>Chat on WhatsApp</span>
               </a>
 
               {/* Secondary CTA: Email */}
               <a
-                href={`mailto:${personalInfo.email}?subject=${encodeURIComponent("Project Inquiry - Clarity Creative")}`}
+                href={`mailto:${personalInfo.email}?subject=${encodeURIComponent("Project Inquiry - Champz Digital")}`}
                 id="email-secondary-cta"
-                className="flex-1 sm:flex-initial flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-[#0D0D0D] hover:bg-[#141414] border border-[#262626] hover:border-[#FF6A00]/50 text-white hover:text-[#FF8C00] font-semibold text-sm transition-all no-underline cursor-pointer"
-                title="Email fatiufaruk7@gmail.com"
+                className="flex-1 sm:flex-initial flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-[#0D1220] hover:bg-[#162032] border border-[#1E293B] hover:border-[#3B82F6]/50 text-[#F8FAFC] hover:text-[#60A5FA] font-semibold text-sm transition-all no-underline cursor-pointer"
+                title="Email Champz Digital"
               >
                 <Mail className="w-4 h-4" />
-                <span>Email Me</span>
+                <span>Send Email</span>
               </a>
             </div>
           </div>
@@ -339,13 +339,13 @@ export const Contact: React.FC = () => {
               RIGHT COLUMN: START A PROJECT INQUIRY FORM
           =================================================== */}
           <div className="flex flex-col justify-center">
-            <div className="p-6 sm:p-8 rounded-2xl bg-[#0D0D0D] border border-[#262626] shadow-2xl relative">
+            <div className="p-6 sm:p-8 rounded-2xl bg-[#0D1220] border border-[#1E293B] shadow-2xl relative">
               {/* Form Title & Short Description */}
               <div className="mb-6">
-                <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#F8FAFC] tracking-tight">
                   Start a Project
                 </h3>
-                <p className="text-xs sm:text-sm text-[#A3A3A3] mt-1.5 leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#94A3B8] mt-1.5 leading-relaxed">
                   Tell me a little about what you need and I&apos;ll get back to you.
                 </p>
               </div>
@@ -353,14 +353,14 @@ export const Contact: React.FC = () => {
               {submitStatus === 'success' ? (
                 /* Success Confirmation State */
                 <div className="py-8 px-4 text-center space-y-4 animate-in fade-in duration-300">
-                  <div className="w-14 h-14 rounded-full bg-[#FF6A00]/15 border border-[#FF6A00]/30 text-[#FF8C00] mx-auto flex items-center justify-center shadow-lg shadow-[#FF6A00]/20">
+                  <div className="w-14 h-14 rounded-full bg-[#2563EB]/15 border border-[#3B82F6]/30 text-[#3B82F6] mx-auto flex items-center justify-center shadow-md shadow-[#2563EB]/20">
                     <CheckCircle2 className="w-7 h-7" />
                   </div>
                   
                   <div className="space-y-1">
-                    <h4 className="text-lg font-bold text-white">Inquiry Sent Successfully!</h4>
-                    <p className="text-xs sm:text-sm text-[#A3A3A3] max-w-sm mx-auto leading-relaxed">
-                      Thank you, <span className="text-white font-semibold">{formData.name || 'Friend'}</span>! I have received your inquiry and will review your project details shortly.
+                    <h4 className="text-lg font-bold text-[#F8FAFC]">Inquiry Sent Successfully!</h4>
+                    <p className="text-xs sm:text-sm text-[#94A3B8] max-w-sm mx-auto leading-relaxed">
+                      Thank you, <span className="text-[#F8FAFC] font-semibold">{formData.name || 'Friend'}</span>! I have received your inquiry and will review your project details shortly.
                     </p>
                   </div>
 
@@ -369,7 +369,7 @@ export const Contact: React.FC = () => {
                       href={getCustomWhatsAppUrl()}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#FF6A00] text-[#050505] font-bold text-xs shadow-md shadow-[#FF6A00]/25 transition-all hover:bg-[#FF7A18]"
+                      className="inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#2563EB] text-white font-bold text-xs shadow-md shadow-[#2563EB]/25 transition-all hover:bg-[#1D4ED8]"
                     >
                       <MessageCircle className="w-4 h-4" />
                       <span>Chat on WhatsApp to Expedite</span>
@@ -378,7 +378,7 @@ export const Contact: React.FC = () => {
                     <button
                       type="button"
                       onClick={handleResetForm}
-                      className="text-xs text-[#737373] hover:text-white transition-colors py-2"
+                      className="text-xs text-[#64748B] hover:text-[#F8FAFC] transition-colors py-2 cursor-pointer"
                     >
                       Send another inquiry
                     </button>
@@ -387,13 +387,13 @@ export const Contact: React.FC = () => {
               ) : submitStatus === 'fallback' ? (
                 /* Seamless Direct Dispatch Fallback */
                 <div className="py-6 px-2 text-center space-y-4 animate-in fade-in duration-300">
-                  <div className="w-12 h-12 rounded-full bg-[#FF6A00]/15 border border-[#FF6A00]/30 text-[#FF8C00] mx-auto flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-[#2563EB]/15 border border-[#3B82F6]/30 text-[#3B82F6] mx-auto flex items-center justify-center">
                     <Send className="w-6 h-6" />
                   </div>
 
                   <div className="space-y-1">
-                    <h4 className="text-base sm:text-lg font-bold text-white">Project Inquiry Ready</h4>
-                    <p className="text-xs text-[#A3A3A3] max-w-xs mx-auto leading-relaxed">
+                    <h4 className="text-base sm:text-lg font-bold text-[#F8FAFC]">Project Inquiry Ready</h4>
+                    <p className="text-xs text-[#94A3B8] max-w-xs mx-auto leading-relaxed">
                       Your details are ready. Choose your preferred platform below to dispatch directly:
                     </p>
                   </div>
@@ -403,7 +403,7 @@ export const Contact: React.FC = () => {
                       href={getCustomWhatsAppUrl()}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#FF6A00] text-[#050505] font-bold text-xs shadow-md shadow-[#FF6A00]/25 transition-all hover:bg-[#FF7A18]"
+                      className="inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#2563EB] text-white font-bold text-xs shadow-md shadow-[#2563EB]/25 transition-all hover:bg-[#1D4ED8]"
                     >
                       <MessageCircle className="w-4 h-4" />
                       <span>Send via WhatsApp</span>
@@ -411,7 +411,7 @@ export const Contact: React.FC = () => {
 
                     <a
                       href={getCustomMailtoUrl()}
-                      className="inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#141414] border border-[#262626] text-white hover:text-[#FF8C00] font-semibold text-xs transition-colors"
+                      className="inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-[#111827] border border-[#1E293B] text-[#F8FAFC] hover:text-[#60A5FA] font-semibold text-xs transition-colors"
                     >
                       <Mail className="w-4 h-4" />
                       <span>Send via Email</span>
@@ -420,7 +420,7 @@ export const Contact: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => setSubmitStatus('idle')}
-                      className="text-[11px] text-[#737373] hover:text-white transition-colors pt-2"
+                      className="text-[11px] text-[#64748B] hover:text-[#F8FAFC] transition-colors pt-2 cursor-pointer"
                     >
                       Back to edit form
                     </button>
@@ -528,11 +528,11 @@ export const Contact: React.FC = () => {
                     type="submit"
                     disabled={isSubmitting}
                     id="submit-inquiry-button"
-                    className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-[#FF6A00] hover:bg-[#FF7A18] text-[#050505] font-extrabold text-sm tracking-wide shadow-lg shadow-[#FF6A00]/25 transition-all hover:scale-[1.01] active:scale-[0.99] disabled:opacity-60 cursor-pointer"
+                    className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-[#2563EB] hover:bg-[#1D4ED8] text-white font-extrabold text-sm tracking-wide shadow-md shadow-[#2563EB]/25 transition-all hover:scale-[1.01] active:scale-[0.99] disabled:opacity-60 cursor-pointer"
                   >
                     {isSubmitting ? (
                       <>
-                        <Loader2 className="w-4 h-4 animate-spin text-[#050505]" />
+                        <Loader2 className="w-4 h-4 animate-spin text-white" />
                         <span>Sending Inquiry...</span>
                       </>
                     ) : (
@@ -545,13 +545,13 @@ export const Contact: React.FC = () => {
 
                   {/* Secondary Option: Prefer WhatsApp? */}
                   <div className="pt-2 text-center">
-                    <span className="text-xs text-[#737373]">
+                    <span className="text-xs text-[#64748B]">
                       Prefer WhatsApp?{' '}
                       <a
                         href={getCustomWhatsAppUrl()}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-[#FF8C00] hover:text-[#FFA04D] font-medium inline-flex items-center gap-1 transition-colors underline-offset-2 hover:underline"
+                        className="text-[#3B82F6] hover:text-[#60A5FA] font-medium inline-flex items-center gap-1 transition-colors underline-offset-2 hover:underline"
                       >
                         <span>Chat directly</span>
                         <ArrowRight className="w-3 h-3" />

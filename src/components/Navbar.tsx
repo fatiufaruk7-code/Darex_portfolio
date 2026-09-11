@@ -44,11 +44,14 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           href="#home" 
           className="logo" 
           onClick={(e) => handleNavClick(e, 'home')}
-          aria-label="Clarity Creative Home"
+          aria-label="Champz Digital Home"
         >
-          <span>C</span>
-          <span className="logo-exp">²</span>
-          <span className="logo-sub hidden sm:inline">{personalInfo.brandName}</span>
+          <span className="logo-badge">
+            <span>C</span><span className="badge-d">D</span>
+          </span>
+          <span className="logo-title">
+            Champz<span className="title-digital">Digital</span>
+          </span>
         </a>
 
         <ul className={`nav-links ${mobileMenuOpen ? 'open' : ''}`} id="navLinks">

@@ -1,14 +1,14 @@
 {
   "id": "/",
-  "name": "Clarity Creative",
-  "short_name": "Clarity",
-  "description": "Clarity Creative — Modern Websites. Clear Solutions.",
+  "name": "Champz Digital",
+  "short_name": "Champz",
+  "description": "Champz Digital — Modern Websites. Digital Solutions.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "theme_color": "#050505",
-  "background_color": "#050505",
+  "theme_color": "#080B14",
+  "background_color": "#080B14",
   "categories": ["business", "productivity", "portfolio"],
   "icons": [
     {

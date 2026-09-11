@@ -5,15 +5,15 @@ import './firebase.ts';
 import App from './App.tsx';
 import './index.css';
 
-// Register PWA service worker with auto-update
-if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
+// Register PWA service worker in production with auto-update
+if (import.meta.env.PROD && typeof window !== 'undefined' && 'serviceWorker' in navigator) {
   registerSW({
     immediate: true,
     onNeedRefresh() {
-      console.log('New Clarity Creative PWA content available; reloading.');
+      console.log('New Champz Digital PWA content available; reloading.');
     },
     onOfflineReady() {
-      console.log('Clarity Creative PWA is ready to work offline.');
+      console.log('Champz Digital PWA is ready to work offline.');
     },
   });
 }

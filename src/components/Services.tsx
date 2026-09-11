@@ -27,7 +27,7 @@ export const Services: React.FC = () => {
   };
 
   const getServiceIcon = (iconName: string) => {
-    const iconClass = "w-5 h-5 text-[#FF6A00]";
+    const iconClass = "w-5 h-5 text-[#3B82F6]";
     switch (iconName) {
       case 'Briefcase':
         return <Briefcase className={iconClass} />;
@@ -56,17 +56,17 @@ export const Services: React.FC = () => {
         {/* Section Header */}
         <div className="reveal show mb-6 sm:mb-8 lg:mb-10 text-left">
           {/* Eyebrow */}
-          <p className="text-[11px] sm:text-xs font-bold text-[#FF6A00] tracking-[0.2em] uppercase mb-1.5 sm:mb-2">
+          <p className="text-[11px] sm:text-xs font-bold text-[#3B82F6] tracking-[0.2em] uppercase mb-1.5 sm:mb-2">
             SERVICES & EXPERTISE
           </p>
 
           {/* Main Heading */}
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
-            What I Do<span className="text-[#FF6A00]">.</span>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#F8FAFC] tracking-tight leading-tight">
+            What We Do<span className="text-[#3B82F6]">.</span>
           </h2>
 
           {/* Supporting Text */}
-          <p className="text-xs sm:text-sm text-[#A3A3A3] mt-2 max-w-xl leading-relaxed uppercase tracking-wide font-medium">
+          <p className="text-xs sm:text-sm text-[#94A3B8] mt-2 max-w-xl leading-relaxed uppercase tracking-wide font-medium">
             DIGITAL SOLUTIONS DESIGNED TO HELP YOU LOOK PROFESSIONAL AND GROW ONLINE.
           </p>
         </div>
@@ -76,39 +76,39 @@ export const Services: React.FC = () => {
           {servicesData.map((service, index) => (
             <div
               key={service.id}
-              className="reveal show group relative p-5 sm:p-6 rounded-xl sm:rounded-2xl bg-[#141414] border border-[#262626] hover:border-[#FF6A00]/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/60 active:scale-[0.99] active:bg-[#181818] flex flex-col justify-between"
+              className="reveal show group relative p-5 sm:p-6 rounded-xl sm:rounded-2xl bg-[#111827] border border-[#1E293B] hover:border-[#3B82F6]/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/60 active:scale-[0.99] active:bg-[#162032] flex flex-col justify-between"
               id={`service-card-${index + 1}`}
               role="article"
             >
               {/* Card Body */}
               <div>
                 {/* Icon Container */}
-                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#0D0D0D] border border-[#262626] group-hover:border-[#FF6A00]/40 flex items-center justify-center mb-3 sm:mb-3.5 transition-colors shrink-0">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#0D1220] border border-[#1E293B] group-hover:border-[#3B82F6]/50 flex items-center justify-center mb-3 sm:mb-3.5 transition-colors shrink-0">
                   {getServiceIcon(service.iconName)}
                 </div>
 
                 {/* Service Title */}
-                <h3 className="text-base sm:text-lg font-bold text-white mb-1.5 sm:mb-2 group-hover:text-[#FF8C00] transition-colors leading-snug tracking-tight">
+                <h3 className="text-base sm:text-lg font-bold text-[#F8FAFC] mb-1.5 sm:mb-2 group-hover:text-[#60A5FA] transition-colors leading-snug tracking-tight">
                   {service.title}
                 </h3>
 
                 {/* Short Description */}
-                <p className="text-xs sm:text-[13px] text-[#A3A3A3] leading-relaxed">
+                <p className="text-xs sm:text-[13px] text-[#94A3B8] leading-relaxed">
                   {service.description}
                 </p>
               </div>
 
               {/* Card Footer / CTA */}
-              <div className="mt-4 pt-3 sm:mt-5 sm:pt-3.5 border-t border-[#1F1F1F]/80 flex items-center justify-between">
+              <div className="mt-4 pt-3 sm:mt-5 sm:pt-3.5 border-t border-[#1E293B] flex items-center justify-between">
                 <button
                   type="button"
                   onClick={() => scrollToContact(service.title)}
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-white group-hover:text-[#FF8C00] transition-colors py-1.5 px-0.5 rounded cursor-pointer min-h-[40px] focus:outline-none focus-visible:ring-1 focus-visible:ring-[#FF6A00]"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#F8FAFC] group-hover:text-[#60A5FA] transition-colors py-1.5 px-0.5 rounded cursor-pointer min-h-[40px] focus:outline-none focus-visible:ring-1 focus-visible:ring-[#3B82F6]"
                   title={`Get Started with ${service.title}`}
                   id={`service-cta-${service.id}`}
                 >
                   <span>Get Started</span>
-                  <span className="text-[#FF6A00] group-hover:translate-x-1 transition-transform inline-block text-sm" aria-hidden="true">
+                  <span className="text-[#3B82F6] group-hover:translate-x-1 transition-transform inline-block text-sm" aria-hidden="true">
                     →
                   </span>
                 </button>

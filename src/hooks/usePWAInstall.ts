@@ -39,7 +39,7 @@ export function usePWAInstall() {
     const handleAppInstalled = () => {
       setIsInstalled(true);
       setDeferredPrompt(null);
-      localStorage.setItem('clarity_pwa_installed', 'true');
+      localStorage.setItem('champz_pwa_installed', 'true');
     };
 
     window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
@@ -59,7 +59,7 @@ export function usePWAInstall() {
       if (outcome === 'accepted') {
         setIsInstalled(true);
         setDeferredPrompt(null);
-        localStorage.setItem('clarity_pwa_installed', 'true');
+        localStorage.setItem('champz_pwa_installed', 'true');
         return true;
       }
       return false;

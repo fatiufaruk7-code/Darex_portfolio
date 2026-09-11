@@ -1,12 +1,43 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+function safeHmrPlugin() {
+  return {
+    name: 'safe-hmr-transport',
+    transform(code, id) {
+      if (typeof id === 'string' && (id.includes('vite/dist/client/client.mjs') || id.includes('@vite/client'))) {
+        return (code || '').replace(
+          'ws.send(JSON.stringify(data));',
+          'if (ws && typeof ws.send === "function" && ws.readyState === 1) { ws.send(JSON.stringify(data)); }'
+        );
+      }
+    },
+    configureServer(server: any) {
+      if (!server.hot) {
+        server.hot = { send: () => {}, on: () => {}, off: () => {} };
+      }
+      if (server.environments) {
+        for (const env of Object.values(server.environments as Record<string, any>)) {
+          if (env && !env.hot) {
+            env.hot = { send: () => {}, on: () => {}, off: () => {} };
+          }
+        }
+      }
+    },
+  };
+}
 
 export default defineConfig(() => {
   return {
     plugins: [
+      safeHmrPlugin(),
       react(),
       tailwindcss(),
       VitePWA({
@@ -23,11 +54,11 @@ export default defineConfig(() => {
         ],
         manifest: {
           id: '/',
-          name: 'Clarity Creative',
-          short_name: 'Clarity',
-          description: 'Clarity Creative — Modern Websites. Clear Solutions.',
-          theme_color: '#0b1020',
-          background_color: '#0b1020',
+          name: 'Champz Digital',
+          short_name: 'Champz',
+          description: 'Champz Digital — Modern Websites. Digital Solutions.',
+          theme_color: '#080B14',
+          background_color: '#080B14',
           display: 'standalone',
           orientation: 'portrait-primary',
           start_url: '/',

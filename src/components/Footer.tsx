@@ -19,14 +19,17 @@ export const Footer: React.FC = () => {
           <a 
             href="#home" 
             onClick={(e) => { e.preventDefault(); scrollToTop(); }}
-            className="logo"
-            aria-label="Clarity Creative"
+            className="flex items-center gap-2 text-decoration-none"
+            aria-label="Champz Digital"
           >
-            <span>C</span>
-            <span className="logo-exp">²</span>
-            <span className="logo-sub hidden sm:inline">{personalInfo.brandName}</span>
+            <div className="w-7 h-7 rounded-lg bg-[#2563EB]/15 border border-[#3B82F6]/30 flex items-center justify-center font-black tracking-tighter text-[#3B82F6] text-xs">
+              CD
+            </div>
+            <span className="font-extrabold tracking-tight text-white text-sm">
+              Champz<span className="text-[#3B82F6]">Digital</span>
+            </span>
           </a>
-          <p className="text-[11px] uppercase tracking-wider text-[#64748b]">{personalInfo.brandName} Studios — {personalInfo.role}</p>
+          <p className="text-[11px] uppercase tracking-wider text-[#64748B]">{personalInfo.brandName} — {personalInfo.tagline}</p>
         </div>
 
         <ul className="footer-nav hidden md:flex">
@@ -45,7 +48,7 @@ export const Footer: React.FC = () => {
 
         <div className="flex items-center gap-4">
           <p className="footer-text text-[11px] tracking-wider uppercase opacity-70">
-            &copy; {new Date().getFullYear()} {personalInfo.name} Studios
+            &copy; {new Date().getFullYear()} {personalInfo.brandName}. All rights reserved.
           </p>
 
           <button
