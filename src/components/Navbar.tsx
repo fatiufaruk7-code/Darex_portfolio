@@ -39,6 +39,9 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
 
   return (
     <header className={isScrolled ? 'scrolled' : ''} id="main-header">
+      {/* STEP 4: Thin blue light line sweep across header area */}
+      <div className="header-light-sweep" aria-hidden="true" />
+
       {/* Mobile Backdrop Blur Overlay */}
       {mobileMenuOpen && (
         <div 

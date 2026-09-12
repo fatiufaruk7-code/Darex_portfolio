@@ -95,7 +95,7 @@ export const Projects: React.FC = () => {
             return (
               <article 
                 key={project.id} 
-                className={`reveal-card stagger-${(index % 6) + 1} group relative flex flex-col justify-between rounded-2xl bg-[#111827] border border-[#1E293B] hover:border-[#3B82F6]/50 shadow-xl shadow-black/50 transition-all duration-300 hover:-translate-y-1.5 overflow-hidden`}
+                className={`reveal-card stagger-${(index % 6) + 1} project-item-card group relative flex flex-col justify-between rounded-2xl bg-[#111827] border border-[#1E293B] shadow-xl shadow-black/50 overflow-hidden`}
                 id={`project-${project.id}`}
               >
                 {/* Visual Thumbnail / Preview Area */}
@@ -121,7 +121,7 @@ export const Projects: React.FC = () => {
                   />
 
                   {/* Representative Interactive Visual Canvas */}
-                  <div className="relative z-10 w-full max-w-[220px] rounded-xl bg-[#0D1220]/90 border border-[#1E293B] p-3 shadow-2xl backdrop-blur-sm group-hover:border-[#3B82F6]/50 transition-colors">
+                  <div className="project-preview-inner relative z-10 w-full max-w-[220px] rounded-xl bg-[#0D1220]/90 border border-[#1E293B] p-3 shadow-2xl backdrop-blur-sm group-hover:border-[#3B82F6]/50 transition-colors">
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-1.5">
                         <div className="w-2 h-2 rounded-full bg-[#3B82F6]" />

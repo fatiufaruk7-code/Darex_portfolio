@@ -37,33 +37,36 @@ export const Hero: React.FC = () => {
             <span className="status-text-blue text-xs font-semibold">Available for freelance projects</span>
           </div>
 
-          {/* Main Heading */}
-          <h1 className="tracking-tighter text-4xl sm:text-5xl lg:text-6xl font-black text-white animate-hero-heading">
-            {personalInfo.name}<span>.</span>
-          </h1>
+          {/* Main Heading with Masked Upward Reveal */}
+          <div className="hero-headline-mask overflow-hidden py-1">
+            <h1 className="tracking-tighter text-4xl sm:text-5xl lg:text-6xl font-black text-white animate-hero-headline">
+              {personalInfo.name}<span className="text-[#3B82F6]">.</span>
+            </h1>
+          </div>
 
           {/* Supporting Title */}
-          <p className="text-xs sm:text-sm font-semibold tracking-wider text-[#60A5FA] uppercase font-mono mt-2 mb-3 animate-hero-supporting">
+          <p className="text-xs sm:text-sm font-semibold tracking-wider text-[#60A5FA] uppercase font-mono mt-1 mb-2 animate-hero-supporting-title">
             {personalInfo.supportingTitle}
           </p>
 
-          {/* Main Headline */}
-          <p className="hero-subhead text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight tracking-tight mt-2 mb-4 animate-hero-heading">
-            Modern Websites.
-            <br className="hidden sm:inline" />{' '}
-            <span className="text-[#3B82F6]">Digital Solutions.</span>
-          </p>
+          {/* Main Headline with Masked Reveal */}
+          <div className="hero-subhead-mask overflow-hidden my-1">
+            <p className="hero-subhead text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight tracking-tight animate-hero-subhead">
+              Modern Websites.{' '}
+              <span className="text-[#3B82F6]">Digital Solutions.</span>
+            </p>
+          </div>
 
           {/* Supporting Text */}
           <p className="hero-description text-sm sm:text-base text-[#94A3B8] leading-relaxed max-w-lg mb-6 animate-hero-supporting">
             {personalInfo.shortDescription}
           </p>
 
-          {/* Two Primary CTA Buttons */}
-          <div className="buttons flex flex-wrap gap-3.5 animate-hero-cta">
+          {/* Two Primary CTA Buttons: Staggered entrance */}
+          <div className="buttons flex flex-wrap gap-3.5">
             <button 
               onClick={() => scrollTo('contact')} 
-              className="btn-frosted-primary"
+              className="btn-frosted-primary animate-hero-cta-1"
               id="hero-hire-btn"
               title="Start a project with Champz Digital"
             >
@@ -73,7 +76,7 @@ export const Hero: React.FC = () => {
 
             <button 
               onClick={() => scrollTo('projects')} 
-              className="btn-frosted-secondary"
+              className="btn-frosted-secondary animate-hero-cta-2"
               id="hero-work-btn"
               title="View selected work and projects"
             >
@@ -82,9 +85,9 @@ export const Hero: React.FC = () => {
             </button>
           </div>
 
-          {/* Frosted Proof Badges & Socials */}
-          <div className="flex flex-col sm:flex-row sm:items-center gap-6 mt-8 pt-6 border-t border-[#1E293B] animate-hero-proof">
-            <div className="flex items-center space-x-4">
+          {/* Frosted Proof Badges & Socials with Staggered Entrance */}
+          <div className="flex flex-col sm:flex-row sm:items-center gap-6 mt-8 pt-6 border-t border-[#1E293B]">
+            <div className="flex items-center space-x-4 animate-hero-proof-badges">
               <div className="flex -space-x-3">
                 <div className="w-9 h-9 rounded-full border-2 border-[#080B14] bg-[#111827] border-[#1E293B] flex items-center justify-center text-[10px] font-bold text-[#60A5FA] shadow-md">React</div>
                 <div className="w-9 h-9 rounded-full border-2 border-[#080B14] bg-[#111827] border-[#1E293B] flex items-center justify-center text-[10px] font-bold text-[#3B82F6] shadow-md">Node</div>
@@ -93,7 +96,7 @@ export const Hero: React.FC = () => {
               <span className="text-xs text-[#94A3B8] font-medium">Professional Web Development &amp; Solutions</span>
             </div>
 
-            <div className="socials sm:ml-auto flex items-center gap-3">
+            <div className="socials sm:ml-auto flex items-center gap-3 animate-hero-proof-socials">
               <a 
                 href={personalInfo.socials.twitter} 
                 target="_blank" 

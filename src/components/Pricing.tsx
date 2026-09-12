@@ -59,12 +59,15 @@ export const Pricing: React.FC = () => {
               >
                 {/* Popular Badge */}
                 {isPopular && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#2563EB] text-white border border-[#60A5FA]/40 shadow-md">
-                      <Sparkles className="w-3 h-3 text-[#22D3EE]" />
-                      {pkg.badge || 'Most Popular'}
-                    </span>
-                  </div>
+                  <>
+                    <div className="pricing-popular-accent-line" aria-hidden="true" />
+                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                      <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#2563EB] text-white border border-[#60A5FA]/40 shadow-md">
+                        <Sparkles className="w-3 h-3 text-[#22D3EE]" />
+                        {pkg.badge || 'Most Popular'}
+                      </span>
+                    </div>
+                  </>
                 )}
 
                 <div>

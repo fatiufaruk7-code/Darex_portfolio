@@ -1274,20 +1274,59 @@ footer {
 
 /* ===================================================
    CHAMPZ DIGITAL ENTRANCE ANIMATION SYSTEM
-   Target Duration: ~1.2s total, staggered, GPU-accelerated
+   Target Duration: ~1.2s – 1.6s total, staggered, GPU-accelerated
+   Interactive immediately (no blocking overlays)
 =================================================== */
 
-/* 1. CD Logo entrance in Navbar */
+/* 1. Header thin blue light sweep line */
+.header-light-sweep {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(59, 130, 246, 0) 15%, 
+    rgba(96, 165, 250, 0.9) 50%, 
+    rgba(34, 211, 238, 0.95) 55%, 
+    rgba(59, 130, 246, 0) 85%, 
+    transparent 100%
+  );
+  opacity: 0;
+  pointer-events: none;
+  z-index: 50;
+  animation: headerLightSweep 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
+}
+
+@keyframes headerLightSweep {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  30% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+/* 2. CD Logo entrance in Navbar */
 @keyframes cdLogoEntrance {
   0% {
     opacity: 0;
-    transform: scale(0.92);
+    transform: scale(0.90);
     box-shadow: 0 0 0 rgba(59, 130, 246, 0);
   }
-  60% {
+  65% {
     opacity: 1;
-    transform: scale(1.02);
-    box-shadow: 0 0 18px rgba(59, 130, 246, 0.45);
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
   }
   100% {
     opacity: 1;
@@ -1297,14 +1336,15 @@ footer {
 }
 
 .animate-cd-logo {
-  animation: cdLogoEntrance 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+  animation: cdLogoEntrance 0.42s cubic-bezier(0.16, 1, 0.3, 1) 0.06s both;
+  will-change: transform, opacity, box-shadow;
 }
 
-/* 2. Brand name "Champz Digital" in Navbar */
+/* 3. Brand name "Champz Digital" in Navbar */
 @keyframes brandTitleEntrance {
   from {
     opacity: 0;
-    transform: translateX(-8px);
+    transform: translateX(-12px);
   }
   to {
     opacity: 1;
@@ -1313,14 +1353,15 @@ footer {
 }
 
 .animate-brand-title {
-  animation: brandTitleEntrance 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
+  animation: brandTitleEntrance 0.38s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
+  will-change: transform, opacity;
 }
 
-/* Desktop nav items entrance */
+/* 4. Desktop nav items entrance */
 @keyframes navItemsEntrance {
   from {
     opacity: 0;
-    transform: translateY(-4px);
+    transform: translateY(-6px);
   }
   to {
     opacity: 1;
@@ -1329,14 +1370,74 @@ footer {
 }
 
 .animate-nav-items {
-  animation: navItemsEntrance 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.28s both;
+  animation: navItemsEntrance 0.38s cubic-bezier(0.16, 1, 0.3, 1) 0.28s both;
+  will-change: transform, opacity;
 }
 
-/* 3. Hero Status Indicator ("Available for freelance projects") */
+/* 5. Hero Status Indicator ("Available for freelance projects") */
 @keyframes heroStatusEntrance {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(12px);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.animate-hero-status {
+  animation: heroStatusEntrance 0.42s cubic-bezier(0.16, 1, 0.3, 1) 0.42s both;
+  will-change: transform, opacity, filter;
+}
+
+/* Gentle status dot pulse */
+@keyframes statusDotPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 5px rgba(59, 130, 246, 0);
+  }
+}
+
+.status-dot-blue {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3B82F6;
+  box-shadow: 0 0 8px #3B82F6;
+  animation: statusDotPulse 2.6s ease-in-out infinite;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* 6. Main Hero Headline Masked Reveal ("Champz Digital.") */
+@keyframes heroMaskedHeadlineReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(105%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-hero-headline {
+  animation: heroMaskedHeadlineReveal 0.52s cubic-bezier(0.16, 1, 0.3, 1) 0.54s both;
+  will-change: transform, opacity;
+}
+
+/* Supporting category title */
+@keyframes heroSupportingTitleEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -1344,29 +1445,29 @@ footer {
   }
 }
 
-.animate-hero-status {
-  animation: heroStatusEntrance 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.32s both;
+.animate-hero-supporting-title {
+  animation: heroSupportingTitleEntrance 0.40s cubic-bezier(0.16, 1, 0.3, 1) 0.62s both;
+  will-change: transform, opacity;
 }
 
-/* 4. Main Hero Heading & Subhead */
-@keyframes heroHeadingEntrance {
+/* Subhead masked reveal ("Modern Websites. Digital Solutions.") */
+@keyframes heroSubheadReveal {
   0% {
     opacity: 0;
-    transform: translateY(16px);
-    filter: blur(4px);
+    transform: translateY(100%);
   }
   100% {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0);
   }
 }
 
-.animate-hero-heading {
-  animation: heroHeadingEntrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
+.animate-hero-subhead {
+  animation: heroSubheadReveal 0.48s cubic-bezier(0.16, 1, 0.3, 1) 0.68s both;
+  will-change: transform, opacity;
 }
 
-/* 5. Supporting text */
+/* 7. Supporting text */
 @keyframes heroSupportingEntrance {
   from {
     opacity: 0;
@@ -1379,14 +1480,15 @@ footer {
 }
 
 .animate-hero-supporting {
-  animation: heroSupportingEntrance 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.65s both;
+  animation: heroSupportingEntrance 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.82s both;
+  will-change: transform, opacity;
 }
 
-/* 6. CTA buttons */
+/* 8. CTA buttons entering one after another */
 @keyframes heroCtaEntrance {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(15px);
   }
   to {
     opacity: 1;
@@ -1394,127 +1496,157 @@ footer {
   }
 }
 
-.animate-hero-cta {
-  animation: heroCtaEntrance 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.85s both;
+.animate-hero-cta-1 {
+  animation: heroCtaEntrance 0.42s cubic-bezier(0.16, 1, 0.3, 1) 0.94s both;
+  will-change: transform, opacity;
 }
 
-/* 7. Social proof row */
-.animate-hero-proof {
-  animation: heroSupportingEntrance 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.95s both;
+.animate-hero-cta-2 {
+  animation: heroCtaEntrance 0.42s cubic-bezier(0.16, 1, 0.3, 1) 1.06s both;
+  will-change: transform, opacity;
 }
 
-/* 8. Code window entrance */
+/* 9. Technology badges & Socials with small stagger */
+.animate-hero-proof-badges {
+  animation: heroSupportingEntrance 0.42s cubic-bezier(0.16, 1, 0.3, 1) 1.18s both;
+  will-change: transform, opacity;
+}
+
+.animate-hero-proof-socials {
+  animation: heroSupportingEntrance 0.42s cubic-bezier(0.16, 1, 0.3, 1) 1.28s both;
+  will-change: transform, opacity;
+}
+
+/* Code window entrance */
 @keyframes heroCodeWindowEntrance {
   0% {
     opacity: 0;
     transform: translateY(20px) scale(0.98);
+    filter: blur(4px);
   }
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
+    filter: blur(0);
   }
 }
 
 .animate-hero-code {
-  animation: heroCodeWindowEntrance 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
+  animation: heroCodeWindowEntrance 0.58s cubic-bezier(0.16, 1, 0.3, 1) 0.65s both;
+  will-change: transform, opacity, filter;
 }
 
-/* 9. Scroll indicator entrance */
+/* Scroll indicator entrance */
 @keyframes scrollIndicatorEntrance {
   from {
     opacity: 0;
+    transform: translateY(-8px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
 .animate-scroll-indicator {
-  animation: scrollIndicatorEntrance 0.6s ease 1.05s both;
+  animation: scrollIndicatorEntrance 0.5s ease 1.35s both;
 }
 
 /* ===================================================
-   AMBIENT BACKGROUND MOTION (VERY SUBTLE & SLOW)
+   AMBIENT BACKGROUND MOTION (SUBTLE & BREATHING)
+   Premium lighting glow behind Hero, slowly moving
 =================================================== */
 
-@keyframes ambientDrift1 {
+@keyframes ambientGlowBreathe1 {
   0%, 100% {
-    transform: translate(0, 0);
+    transform: translate(0, 0) scale(1);
+    opacity: 0.55;
   }
   50% {
-    transform: translate(32px, -22px);
+    transform: translate(50px, -24px) scale(1.12);
+    opacity: 0.85;
   }
 }
 
-@keyframes ambientDrift2 {
+@keyframes ambientGlowBreathe2 {
   0%, 100% {
-    transform: translate(0, 0);
+    transform: translate(0, 0) scale(1);
+    opacity: 0.45;
   }
   50% {
-    transform: translate(-28px, 26px);
+    transform: translate(-45px, 28px) scale(1.14);
+    opacity: 0.75;
   }
 }
 
 .ambient-hero-orb-1 {
   position: absolute;
-  top: 15%;
-  left: 10%;
-  width: 520px;
-  height: 520px;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.07) 0%, transparent 70%);
-  filter: blur(120px);
+  top: 10%;
+  left: 6%;
+  width: 580px;
+  height: 580px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, rgba(37, 99, 235, 0.03) 45%, transparent 70%);
+  filter: blur(80px);
   pointer-events: none;
   z-index: 0;
-  animation: ambientDrift1 22s ease-in-out infinite;
-  will-change: transform;
+  animation: ambientGlowBreathe1 18s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 
 .ambient-hero-orb-2 {
   position: absolute;
-  bottom: 8%;
-  right: 12%;
-  width: 480px;
-  height: 480px;
-  background: radial-gradient(circle, rgba(34, 211, 238, 0.035) 0%, transparent 70%);
-  filter: blur(110px);
+  bottom: 5%;
+  right: 8%;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.08) 0%, rgba(59, 130, 246, 0.02) 50%, transparent 70%);
+  filter: blur(80px);
   pointer-events: none;
   z-index: 0;
-  animation: ambientDrift2 26s ease-in-out infinite;
-  will-change: transform;
+  animation: ambientGlowBreathe2 22s ease-in-out infinite;
+  will-change: transform, opacity;
 }
 
 /* ===================================================
    SCROLL REVEALS & STAGGER SYSTEM
+   Major sections reveal when entering viewport:
+   opacity, translateY, and blur-to-sharp transition
 =================================================== */
 
 .reveal {
   opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
+  transform: translateY(24px);
+  filter: blur(4px);
+  transition: opacity 0.62s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.62s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.62s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
 }
 
 .reveal.show {
   opacity: 1;
   transform: translateY(0);
+  filter: blur(0);
 }
 
 .reveal-card {
   opacity: 0;
   transform: translateY(22px);
-  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
+  filter: blur(3px);
+  transition: opacity 0.58s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.58s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.58s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
 }
 
 .reveal-group.show .reveal-card,
 .reveal-card.show {
   opacity: 1;
   transform: translateY(0);
+  filter: blur(0);
 }
 
-/* Stagger increments (80-120ms stagger as specified in prompt) */
+/* Stagger increments (80-120ms range requested: exactly 90ms apart) */
 .stagger-1 { transition-delay: 0ms; }
 .stagger-2 { transition-delay: 90ms; }
 .stagger-3 { transition-delay: 180ms; }
@@ -1522,12 +1654,85 @@ footer {
 .stagger-5 { transition-delay: 360ms; }
 .stagger-6 { transition-delay: 450ms; }
 
-/* Most Popular Pricing Card Subtle Accent Animation (Runs Once & Settles) */
+/* ===================================================
+   PROJECT CARD INTERACTION (DESKTOP & MOBILE)
+=================================================== */
+
+.project-item-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+  will-change: transform, border-color, box-shadow;
+}
+
+.project-preview-inner {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-item-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(59, 130, 246, 0.6);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.75), 0 0 22px rgba(37, 99, 235, 0.22);
+  }
+  .project-item-card:hover .project-preview-inner {
+    transform: scale(1.03);
+  }
+}
+
+@media (hover: none) {
+  .project-item-card:active {
+    transform: scale(0.985);
+    transition-duration: 0.1s;
+  }
+}
+
+/* ===================================================
+   PRICING CARDS & ACCENT LINE
+=================================================== */
+
+.pricing-popular-accent-line {
+  position: absolute;
+  top: 0;
+  left: 12%;
+  right: 12%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #3B82F6 30%, #60A5FA 50%, #22D3EE 70%, transparent);
+  border-radius: 9999px;
+  opacity: 0;
+  transform: scaleX(0.2);
+  pointer-events: none;
+}
+
+.reveal-group.show .pricing-card-popular .pricing-popular-accent-line,
+.pricing-card-popular.show .pricing-popular-accent-line {
+  animation: popularAccentLineReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+
+@keyframes popularAccentLineReveal {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.2);
+    box-shadow: 0 0 0 rgba(59, 130, 246, 0);
+  }
+  60% {
+    opacity: 1;
+    transform: scaleX(1);
+    box-shadow: 0 0 16px rgba(59, 130, 246, 0.5);
+  }
+  100% {
+    opacity: 0.9;
+    transform: scaleX(1);
+    box-shadow: 0 0 8px rgba(37, 99, 235, 0.25);
+  }
+}
+
 @keyframes popularCardSettle {
   0% {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 0 rgba(59, 130, 246, 0);
   }
-  50% {
+  60% {
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), 0 0 22px rgba(59, 130, 246, 0.35);
   }
   100% {
@@ -1543,7 +1748,7 @@ footer {
 .mobile-backdrop-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(8, 11, 20, 0.7);
+  background: rgba(8, 11, 20, 0.72);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: 997;
@@ -1569,15 +1774,15 @@ footer {
     background: rgba(13, 18, 32, 0.98);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border-bottom: 1px solid #1E293B;
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 18px;
-    transform: translateY(-120%);
+    gap: 16px;
+    transform: translateY(-16px);
     opacity: 0;
     pointer-events: none;
-    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), 
+    transition: transform 0.26s cubic-bezier(0.16, 1, 0.3, 1), 
                 opacity 0.22s ease;
     z-index: 998;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
@@ -1589,29 +1794,26 @@ footer {
     pointer-events: auto;
   }
 
+  .nav-links li {
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
   .nav-links.open li {
-    animation: navItemSlideIn 0.24s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  .nav-links.open li:nth-child(1) { animation-delay: 0.03s; }
-  .nav-links.open li:nth-child(2) { animation-delay: 0.07s; }
-  .nav-links.open li:nth-child(3) { animation-delay: 0.11s; }
-  .nav-links.open li:nth-child(4) { animation-delay: 0.15s; }
-  .nav-links.open li:nth-child(5) { animation-delay: 0.19s; }
-  .nav-links.open li:nth-child(6) { animation-delay: 0.23s; }
-  .nav-links.open li:nth-child(7) { animation-delay: 0.27s; }
-  .nav-links.open li:nth-child(8) { animation-delay: 0.31s; }
-
-  @keyframes navItemSlideIn {
-    from {
-      opacity: 0;
-      transform: translateY(-8px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+  /* 8 items in sequence: Home, Services, Pricing, Projects, About, Contact, Connect, PWA */
+  .nav-links.open li:nth-child(1) { transition-delay: 0.04s; }
+  .nav-links.open li:nth-child(2) { transition-delay: 0.08s; }
+  .nav-links.open li:nth-child(3) { transition-delay: 0.12s; }
+  .nav-links.open li:nth-child(4) { transition-delay: 0.16s; }
+  .nav-links.open li:nth-child(5) { transition-delay: 0.20s; }
+  .nav-links.open li:nth-child(6) { transition-delay: 0.24s; }
+  .nav-links.open li:nth-child(7) { transition-delay: 0.28s; }
+  .nav-links.open li:nth-child(8) { transition-delay: 0.32s; }
 
   .nav-contact {
     display: none;
@@ -1707,11 +1909,17 @@ footer {
   .animate-cd-logo,
   .animate-brand-title,
   .animate-nav-items,
+  .header-light-sweep,
   .animate-hero-status,
-  .animate-hero-heading,
+  .status-dot-blue,
+  .animate-hero-headline,
+  .animate-hero-supporting-title,
+  .animate-hero-subhead,
   .animate-hero-supporting,
-  .animate-hero-cta,
-  .animate-hero-proof,
+  .animate-hero-cta-1,
+  .animate-hero-cta-2,
+  .animate-hero-proof-badges,
+  .animate-hero-proof-socials,
   .animate-hero-code,
   .animate-scroll-indicator,
   .ambient-hero-orb-1,
@@ -1719,6 +1927,7 @@ footer {
   .mesh-1,
   .mesh-2,
   .mesh-3,
+  .pricing-popular-accent-line,
   .pricing-card-popular.show,
   .scroll-indicator,
   .mobile-backdrop-overlay {
@@ -1733,10 +1942,12 @@ footer {
   .reveal-card {
     opacity: 1 !important;
     transform: none !important;
+    filter: none !important;
     transition: none !important;
   }
 
-  .project-card-frosted:hover .project-preview-frosted {
+  .project-item-card:hover,
+  .project-item-card:hover .project-preview-inner {
     transform: none !important;
   }
 }
