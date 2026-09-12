@@ -24,39 +24,43 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="hero section" id="home">
-      <div className="container hero-grid">
-        <div className="reveal show flex flex-col justify-center">
+    <section className="hero section relative overflow-hidden" id="home">
+      {/* Extremely Subtle Ambient Background Orbs */}
+      <div className="ambient-hero-orb-1" aria-hidden="true" />
+      <div className="ambient-hero-orb-2" aria-hidden="true" />
+
+      <div className="container hero-grid relative z-10">
+        <div className="flex flex-col justify-center">
           {/* Subtle Professional Status Indicator */}
-          <div className="status-badge inline-flex items-center gap-2 mb-4" id="hero-status">
+          <div className="status-badge inline-flex items-center gap-2 mb-4 animate-hero-status" id="hero-status">
             <div className="status-dot-blue"></div>
             <span className="status-text-blue text-xs font-semibold">Available for freelance projects</span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="tracking-tighter text-4xl sm:text-5xl lg:text-6xl font-black text-white">
+          <h1 className="tracking-tighter text-4xl sm:text-5xl lg:text-6xl font-black text-white animate-hero-heading">
             {personalInfo.name}<span>.</span>
           </h1>
 
           {/* Supporting Title */}
-          <p className="text-xs sm:text-sm font-semibold tracking-wider text-[#60A5FA] uppercase font-mono mt-2 mb-3">
+          <p className="text-xs sm:text-sm font-semibold tracking-wider text-[#60A5FA] uppercase font-mono mt-2 mb-3 animate-hero-supporting">
             {personalInfo.supportingTitle}
           </p>
 
           {/* Main Headline */}
-          <p className="hero-subhead text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight tracking-tight mt-2 mb-4">
+          <p className="hero-subhead text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight tracking-tight mt-2 mb-4 animate-hero-heading">
             Modern Websites.
             <br className="hidden sm:inline" />{' '}
             <span className="text-[#3B82F6]">Digital Solutions.</span>
           </p>
 
           {/* Supporting Text */}
-          <p className="hero-description text-sm sm:text-base text-[#94A3B8] leading-relaxed max-w-lg mb-6">
+          <p className="hero-description text-sm sm:text-base text-[#94A3B8] leading-relaxed max-w-lg mb-6 animate-hero-supporting">
             {personalInfo.shortDescription}
           </p>
 
           {/* Two Primary CTA Buttons */}
-          <div className="buttons flex flex-wrap gap-3.5">
+          <div className="buttons flex flex-wrap gap-3.5 animate-hero-cta">
             <button 
               onClick={() => scrollTo('contact')} 
               className="btn-frosted-primary"
@@ -79,7 +83,7 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Frosted Proof Badges & Socials */}
-          <div className="flex flex-col sm:flex-row sm:items-center gap-6 mt-8 pt-6 border-t border-[#1E293B]">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-6 mt-8 pt-6 border-t border-[#1E293B] animate-hero-proof">
             <div className="flex items-center space-x-4">
               <div className="flex -space-x-3">
                 <div className="w-9 h-9 rounded-full border-2 border-[#080B14] bg-[#111827] border-[#1E293B] flex items-center justify-center text-[10px] font-bold text-[#60A5FA] shadow-md">React</div>
@@ -118,7 +122,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* FROSTED CODE WINDOW */}
-        <div className="reveal show flex justify-center lg:justify-end">
+        <div className="flex justify-center lg:justify-end animate-hero-code">
           <div className="code-window-frosted code-font" id="hero-code-window">
             <div className="code-window-header">
               <div className="code-window-dots">
@@ -173,7 +177,7 @@ export const Hero: React.FC = () => {
       </div>
 
       <div 
-        className="scroll-indicator cursor-pointer" 
+        className="scroll-indicator cursor-pointer animate-scroll-indicator" 
         onClick={() => scrollTo('services')}
         title="Scroll to explore services"
       >

@@ -12,7 +12,7 @@ export const About: React.FC = () => {
   return (
     <section className="about section" id="about">
       <div className="container">
-        <div className="section-title reveal show">
+        <div className="section-title reveal">
           <p>01 — ABOUT</p>
           <h2>
             Turning ideas into
@@ -21,7 +21,7 @@ export const About: React.FC = () => {
         </div>
 
         <div className="about-grid">
-          <div className="about-text reveal show">
+          <div className="about-text reveal">
             <p>
               At {personalInfo.brandName}, we build fast, responsive and professional websites and digital solutions for businesses, organizations and individuals.
             </p>
@@ -41,8 +41,8 @@ export const About: React.FC = () => {
             </a>
           </div>
 
-          <div className="about-cards reveal show">
-            <div className="about-card-frosted" id="about-card-dev">
+          <div className="about-cards reveal-group">
+            <div className="about-card-frosted reveal-card stagger-1" id="about-card-dev">
               <div className="mb-4 text-[#3B82F6]">
                 <Code className="w-6 h-6" />
               </div>
@@ -50,7 +50,7 @@ export const About: React.FC = () => {
               <p>Building modern, performant web experiences.</p>
             </div>
 
-            <div className="about-card-frosted" id="about-card-solutions">
+            <div className="about-card-frosted reveal-card stagger-2" id="about-card-solutions">
               <div className="mb-4 text-[#3B82F6]">
                 <Layers className="w-6 h-6" />
               </div>
@@ -58,7 +58,7 @@ export const About: React.FC = () => {
               <p>Designing tailored systems that scale with your goals.</p>
             </div>
 
-            <div className="about-card-frosted" id="about-card-creative">
+            <div className="about-card-frosted reveal-card stagger-3" id="about-card-creative">
               <div className="mb-4 text-[#3B82F6]">
                 <Lightbulb className="w-6 h-6" />
               </div>
@@ -66,7 +66,7 @@ export const About: React.FC = () => {
               <p>Turning ambitious visions into intuitive interfaces.</p>
             </div>
 
-            <div className="about-card-frosted" id="about-card-problem-solver">
+            <div className="about-card-frosted reveal-card stagger-4" id="about-card-problem-solver">
               <div className="mb-4 text-[#3B82F6]">
                 <Puzzle className="w-6 h-6" />
               </div>

@@ -16,7 +16,7 @@ export const Process: React.FC = () => {
   return (
     <section className="section" id="process">
       <div className="container">
-        <div className="section-title reveal show">
+        <div className="section-title reveal">
           <p>05 — WORKFLOW</p>
           <h2>
             Our development
@@ -24,9 +24,9 @@ export const Process: React.FC = () => {
           </h2>
         </div>
 
-        <div className="process-grid reveal show">
-          {processSteps.map((step) => (
-            <div key={step.number} className="process-card-frosted" id={`process-step-${step.number}`}>
+        <div className="process-grid reveal-group">
+          {processSteps.map((step, index) => (
+            <div key={step.number} className={`process-card-frosted reveal-card stagger-${index + 1}`} id={`process-step-${step.number}`}>
               <span className="process-number-frosted">{step.number}</span>
 
               <div className="process-icon">

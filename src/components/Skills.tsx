@@ -37,7 +37,7 @@ export const Skills: React.FC = () => {
   return (
     <section className="section" id="skills">
       <div className="container">
-        <div className="section-title reveal show flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <div className="section-title reveal flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
             <p>02 — TECH STACK</p>
             <h2>
@@ -69,9 +69,9 @@ export const Skills: React.FC = () => {
           </div>
         </div>
 
-        <div className="skills-grid reveal show">
-          {filteredSkills.map((skill) => (
-            <div key={skill.id} className="skill-card-frosted" id={`skill-${skill.id}`}>
+        <div className="skills-grid reveal-group">
+          {filteredSkills.map((skill, index) => (
+            <div key={skill.id} className={`skill-card-frosted reveal-card stagger-${(index % 6) + 1}`} id={`skill-${skill.id}`}>
               <div className="skill-icon-frosted">
                 {getLucideIcon(skill.lucideIconName)}
               </div>

@@ -156,7 +156,7 @@ export const Contact: React.FC = () => {
   return (
     <section className="contact section" id="contact">
       <div className="container">
-        <div className="contact-box-frosted reveal show" id="contact-container">
+        <div className="contact-box-frosted reveal" id="contact-container">
           {/* ===================================================
               LEFT COLUMN: CONTACT INFO & DIRECT CTAS
           =================================================== */}

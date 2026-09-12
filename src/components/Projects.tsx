@@ -74,7 +74,7 @@ export const Projects: React.FC = () => {
     >
       <div className="container">
         {/* Section Header */}
-        <div className="reveal show mb-8 sm:mb-12 text-left">
+        <div className="reveal mb-8 sm:mb-12 text-left">
           <p className="text-[11px] sm:text-xs font-bold text-[#3B82F6] tracking-[0.2em] uppercase mb-1.5 sm:mb-2">
             04 — SELECTED WORK
           </p>
@@ -87,15 +87,15 @@ export const Projects: React.FC = () => {
         </div>
 
         {/* Projects Grid: 1 col on mobile, 2 on tablet, 3 on desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 items-stretch">
-          {projectsData.map((project) => {
+        <div className="reveal-group grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 items-stretch">
+          {projectsData.map((project, index) => {
             const hasLive = hasRealLiveUrl(project.liveUrl);
             const hasGithub = hasRealGithubUrl(project.githubUrl);
 
             return (
               <article 
                 key={project.id} 
-                className="reveal show group relative flex flex-col justify-between rounded-2xl bg-[#111827] border border-[#1E293B] hover:border-[#3B82F6]/50 shadow-xl shadow-black/50 transition-all duration-300 hover:-translate-y-1.5 overflow-hidden"
+                className={`reveal-card stagger-${(index % 6) + 1} group relative flex flex-col justify-between rounded-2xl bg-[#111827] border border-[#1E293B] hover:border-[#3B82F6]/50 shadow-xl shadow-black/50 transition-all duration-300 hover:-translate-y-1.5 overflow-hidden`}
                 id={`project-${project.id}`}
               >
                 {/* Visual Thumbnail / Preview Area */}

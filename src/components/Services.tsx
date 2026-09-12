@@ -54,7 +54,7 @@ export const Services: React.FC = () => {
     >
       <div className="container">
         {/* Section Header */}
-        <div className="reveal show mb-6 sm:mb-8 lg:mb-10 text-left">
+        <div className="reveal mb-6 sm:mb-8 lg:mb-10 text-left">
           {/* Eyebrow */}
           <p className="text-[11px] sm:text-xs font-bold text-[#3B82F6] tracking-[0.2em] uppercase mb-1.5 sm:mb-2">
             SERVICES & EXPERTISE
@@ -72,11 +72,11 @@ export const Services: React.FC = () => {
         </div>
 
         {/* Compact Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4 lg:gap-5">
+        <div className="reveal-group grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4 lg:gap-5">
           {servicesData.map((service, index) => (
             <div
               key={service.id}
-              className="reveal show group relative p-5 sm:p-6 rounded-xl sm:rounded-2xl bg-[#111827] border border-[#1E293B] hover:border-[#3B82F6]/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/60 active:scale-[0.99] active:bg-[#162032] flex flex-col justify-between"
+              className={`reveal-card stagger-${(index % 6) + 1} group relative p-5 sm:p-6 rounded-xl sm:rounded-2xl bg-[#111827] border border-[#1E293B] hover:border-[#3B82F6]/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/60 active:scale-[0.99] active:bg-[#162032] flex flex-col justify-between`}
               id={`service-card-${index + 1}`}
               role="article"
             >

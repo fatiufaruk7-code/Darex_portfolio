@@ -39,6 +39,15 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
 
   return (
     <header className={isScrolled ? 'scrolled' : ''} id="main-header">
+      {/* Mobile Backdrop Blur Overlay */}
+      {mobileMenuOpen && (
+        <div 
+          className="mobile-backdrop-overlay sm:hidden"
+          onClick={() => setMobileMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
       <nav className="navbar container">
         <a 
           href="#home" 
@@ -46,15 +55,15 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           onClick={(e) => handleNavClick(e, 'home')}
           aria-label="Champz Digital Home"
         >
-          <span className="logo-badge">
+          <span className="logo-badge animate-cd-logo">
             <span>C</span><span className="badge-d">D</span>
           </span>
-          <span className="logo-title">
+          <span className="logo-title animate-brand-title">
             Champz<span className="title-digital">Digital</span>
           </span>
         </a>
 
-        <ul className={`nav-links ${mobileMenuOpen ? 'open' : ''}`} id="navLinks">
+        <ul className={`nav-links ${mobileMenuOpen ? 'open' : ''} animate-nav-items`} id="navLinks">
           {navItems.map((item) => (
             <li key={item.id}>
               <a
@@ -85,7 +94,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           )}
         </ul>
 
-        <div className="hidden sm:flex items-center gap-3">
+        <div className="hidden sm:flex items-center gap-3 animate-nav-items">
           <PWAInstallButton variant="nav" />
           <a 
             href="#contact" 

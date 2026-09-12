@@ -32,7 +32,7 @@ export const Pricing: React.FC = () => {
     <section className="section" id="pricing">
       <div className="container">
         {/* Section Title */}
-        <div className="section-title reveal show text-left">
+        <div className="section-title reveal text-left">
           <p>03 — INVESTMENT</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
             Simple Pricing<span>.</span>
@@ -43,7 +43,7 @@ export const Pricing: React.FC = () => {
         </div>
 
         {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-7 items-stretch">
+        <div className="reveal-group grid grid-cols-1 lg:grid-cols-3 gap-7 items-stretch">
           {pricingPackagesData.map((pkg, index) => {
             const isPopular = pkg.popular;
 
@@ -51,7 +51,7 @@ export const Pricing: React.FC = () => {
               <div
                 key={pkg.id}
                 id={`pricing-card-${pkg.id}`}
-                className={`reveal show relative flex flex-col justify-between p-7 sm:p-8 rounded-2xl transition-all duration-300 ${
+                className={`reveal-card stagger-${index + 1} ${isPopular ? 'pricing-card-popular' : ''} relative flex flex-col justify-between p-7 sm:p-8 rounded-2xl transition-all duration-300 ${
                   isPopular
                     ? 'bg-[#111827] border-2 border-[#3B82F6] shadow-xl shadow-[#2563EB]/10 lg:-translate-y-2'
                     : 'bg-[#111827] border border-[#1E293B] hover:border-[#3B82F6]/40 shadow-lg'

@@ -22,19 +22,20 @@ export default function App() {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
-    // Scroll reveal observer
-    const reveals = document.querySelectorAll('.reveal');
+    // Scroll reveal observer with smooth staggering support
+    const reveals = document.querySelectorAll('.reveal, .reveal-card, .reveal-group');
     const revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('show');
+            revealObserver.unobserve(entry.target);
           }
         });
       },
       {
-        threshold: 0.12,
-        rootMargin: '0px 0px -50px 0px',
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px',
       }
     );
 
