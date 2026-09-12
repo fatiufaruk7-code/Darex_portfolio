@@ -337,7 +337,7 @@ header.scrolled {
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
-  padding-top: 98px;
+  padding-top: calc(80px + env(safe-area-inset-top, 0px) + 32px);
   padding-bottom: 50px;
   position: relative;
   z-index: 10;
@@ -2003,8 +2003,13 @@ footer {
 }
 
 @media(max-width: 640px) {
-  .section {
+  .section:not(.hero) {
     padding: 70px 0;
+  }
+
+  .hero {
+    padding-top: calc(80px + env(safe-area-inset-top, 0px) + 32px);
+    padding-bottom: 40px;
   }
 
   .hero-grid {

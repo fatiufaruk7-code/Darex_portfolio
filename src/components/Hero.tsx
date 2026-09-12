@@ -22,7 +22,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="hero section relative overflow-hidden" id="home">
+    <section className="hero relative overflow-hidden" id="home">
       {/* Extremely Subtle Ambient Background Orbs */}
       <div className="ambient-hero-orb-1" aria-hidden="true" />
       <div className="ambient-hero-orb-2" aria-hidden="true" />
