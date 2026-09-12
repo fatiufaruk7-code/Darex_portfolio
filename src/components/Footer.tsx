@@ -1,15 +1,15 @@
 import React from 'react';
 import { ArrowUp } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData.ts';
+import { scrollToSection } from '../utils/navigation.ts';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    scrollToSection('home', true);
   };
 
   const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    scrollToSection(id, true);
   };
 
   return (

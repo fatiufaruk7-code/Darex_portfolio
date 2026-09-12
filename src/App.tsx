@@ -42,16 +42,32 @@ export default function App() {
     reveals.forEach((el) => revealObserver.observe(el));
 
     // Active navigation section observer
-    const sectionIds = ['home', 'about', 'services', 'pricing', 'projects', 'skills', 'process', 'contact'];
     const handleSectionScroll = () => {
-      const scrollPosition = window.scrollY + 200;
+      // Bottom of page detection -> highlight contact
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 60) {
+        setActiveSection('contact');
+        return;
+      }
 
-      for (let i = sectionIds.length - 1; i >= 0; i--) {
-        const section = document.getElementById(sectionIds[i]);
-        if (section) {
-          const top = section.offsetTop;
-          if (scrollPosition >= top) {
-            setActiveSection(sectionIds[i]);
+      // Top of page detection -> highlight home
+      if (window.scrollY < 120) {
+        setActiveSection('home');
+        return;
+      }
+
+      // Check section bounding boxes with 140px header offset
+      const sections = ['contact', 'process', 'skills', 'about', 'projects', 'pricing', 'services', 'home'];
+      for (const id of sections) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 140 && rect.bottom > 140) {
+            // Map sub-sections (skills, process) under the 'about' navigation item
+            if (id === 'skills' || id === 'process') {
+              setActiveSection('about');
+            } else {
+              setActiveSection(id);
+            }
             break;
           }
         }
@@ -78,10 +94,10 @@ export default function App() {
       <Navbar activeSection={activeSection} />
       <main className="relative z-10">
         <Hero />
-        <About />
         <Services />
         <Pricing />
         <Projects />
+        <About />
         <Skills />
         <Process />
         <Contact />

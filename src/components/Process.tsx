@@ -17,7 +17,7 @@ export const Process: React.FC = () => {
     <section className="section" id="process">
       <div className="container">
         <div className="section-title reveal">
-          <p>05 — WORKFLOW</p>
+          <p>WORKFLOW</p>
           <h2>
             Our development
             <br className="hidden sm:inline" /> <span>process.</span>

@@ -8,20 +8,18 @@ import {
   Smartphone 
 } from 'lucide-react';
 import { servicesData } from '../data/portfolioData.ts';
+import { scrollToSection } from '../utils/navigation.ts';
 
 export const Services: React.FC = () => {
   const scrollToContact = (projectType?: string) => {
-    const el = document.getElementById('contact');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+    scrollToSection('contact', true);
 
-      // Pre-select the inquiry project type if form is present
-      if (projectType) {
-        const selectEl = document.getElementById('inquiry-project-type') as HTMLSelectElement | null;
-        if (selectEl) {
-          selectEl.value = projectType;
-          selectEl.dispatchEvent(new Event('change', { bubbles: true }));
-        }
+    // Pre-select the inquiry project type if form is present
+    if (projectType) {
+      const selectEl = document.getElementById('inquiry-project-type') as HTMLSelectElement | null;
+      if (selectEl) {
+        selectEl.value = projectType;
+        selectEl.dispatchEvent(new Event('change', { bubbles: true }));
       }
     }
   };

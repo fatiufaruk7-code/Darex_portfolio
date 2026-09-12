@@ -1,29 +1,27 @@
 import React from 'react';
 import { Check, ArrowRight, Sparkles, Info } from 'lucide-react';
 import { pricingPackagesData } from '../data/portfolioData.ts';
+import { scrollToSection } from '../utils/navigation.ts';
 
 export const Pricing: React.FC = () => {
   const scrollToContact = (budgetRange?: string, packageName?: string) => {
-    const el = document.getElementById('contact');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+    scrollToSection('contact', true);
 
-      // Pre-select the budget range in the form
-      if (budgetRange) {
-        const budgetSelect = document.getElementById('inquiry-budget') as HTMLSelectElement | null;
-        if (budgetSelect) {
-          budgetSelect.value = budgetRange;
-          budgetSelect.dispatchEvent(new Event('change', { bubbles: true }));
-        }
+    // Pre-select the budget range in the form
+    if (budgetRange) {
+      const budgetSelect = document.getElementById('inquiry-budget') as HTMLSelectElement | null;
+      if (budgetSelect) {
+        budgetSelect.value = budgetRange;
+        budgetSelect.dispatchEvent(new Event('change', { bubbles: true }));
       }
+    }
 
-      // Pre-fill or append the package preference to message if empty
-      if (packageName) {
-        const messageEl = document.getElementById('inquiry-message') as HTMLTextAreaElement | null;
-        if (messageEl && !messageEl.value) {
-          messageEl.value = `Hi Champz Digital, I'm interested in the ${packageName} package.`;
-          messageEl.dispatchEvent(new Event('input', { bubbles: true }));
-        }
+    // Pre-fill or append the package preference to message if empty
+    if (packageName) {
+      const messageEl = document.getElementById('inquiry-message') as HTMLTextAreaElement | null;
+      if (messageEl && !messageEl.value) {
+        messageEl.value = `Hi Champz Digital, I'm interested in the ${packageName} package.`;
+        messageEl.dispatchEvent(new Event('input', { bubbles: true }));
       }
     }
   };
@@ -33,7 +31,7 @@ export const Pricing: React.FC = () => {
       <div className="container">
         {/* Section Title */}
         <div className="section-title reveal text-left">
-          <p>03 — INVESTMENT</p>
+          <p>PACKAGES &amp; PRICING</p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
             Simple Pricing<span>.</span>
           </h2>

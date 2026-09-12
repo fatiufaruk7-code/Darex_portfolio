@@ -39,7 +39,7 @@ export const Skills: React.FC = () => {
       <div className="container">
         <div className="section-title reveal flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
-            <p>02 — TECH STACK</p>
+            <p>TECH STACK</p>
             <h2>
               Technologies we
               <br className="hidden sm:inline" /> <span>work with.</span>

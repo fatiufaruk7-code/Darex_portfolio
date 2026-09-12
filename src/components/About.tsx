@@ -1,19 +1,19 @@
 import React from 'react';
 import { ArrowRight, Code, Layers, Lightbulb, Puzzle } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData.ts';
+import { scrollToSection } from '../utils/navigation.ts';
 
 export const About: React.FC = () => {
   const scrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
-    const el = document.getElementById('contact');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    scrollToSection('contact', true);
   };
 
   return (
     <section className="about section" id="about">
       <div className="container">
         <div className="section-title reveal">
-          <p>01 — ABOUT</p>
+          <p>ABOUT CHAMPZ DIGITAL</p>
           <h2>
             Turning ideas into
             <br className="hidden sm:inline" /> <span>digital experiences.</span>

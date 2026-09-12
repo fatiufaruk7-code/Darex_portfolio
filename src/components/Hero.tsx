@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRight, Check, Copy, Twitter, MessageCircle, ChevronDown, Briefcase } from 'lucide-react';
 import { personalInfo, codeSnippetString } from '../data/portfolioData.ts';
+import { scrollToSection } from '../utils/navigation.ts';
 
 export const Hero: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -17,10 +18,7 @@ export const Hero: React.FC = () => {
   };
 
   const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
+    scrollToSection(id, true);
   };
 
   return (
@@ -39,7 +37,7 @@ export const Hero: React.FC = () => {
 
           {/* Main Heading with Masked Upward Reveal */}
           <div className="hero-headline-mask overflow-hidden py-1">
-            <h1 className="tracking-tighter text-4xl sm:text-5xl lg:text-6xl font-black text-white animate-hero-headline">
+            <h1 className="tracking-tighter text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-black text-white animate-hero-headline break-words">
               {personalInfo.name}<span className="text-[#3B82F6]">.</span>
             </h1>
           </div>
@@ -51,52 +49,54 @@ export const Hero: React.FC = () => {
 
           {/* Main Headline with Masked Reveal */}
           <div className="hero-subhead-mask overflow-hidden my-1">
-            <p className="hero-subhead text-2xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight tracking-tight animate-hero-subhead">
+            <p className="hero-subhead text-xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight tracking-tight animate-hero-subhead">
               Modern Websites.{' '}
               <span className="text-[#3B82F6]">Digital Solutions.</span>
             </p>
           </div>
 
           {/* Supporting Text */}
-          <p className="hero-description text-sm sm:text-base text-[#94A3B8] leading-relaxed max-w-lg mb-6 animate-hero-supporting">
+          <p className="hero-description text-sm sm:text-base text-[#CBD5E1] leading-relaxed max-w-lg mb-6 animate-hero-supporting">
             {personalInfo.shortDescription}
           </p>
 
           {/* Two Primary CTA Buttons: Staggered entrance */}
-          <div className="buttons flex flex-wrap gap-3.5">
+          <div className="buttons flex flex-wrap gap-3 sm:gap-3.5 items-center">
             <button 
               onClick={() => scrollTo('contact')} 
-              className="btn-frosted-primary animate-hero-cta-1"
+              className="btn-frosted-primary animate-hero-cta-1 w-full xs:w-auto"
               id="hero-hire-btn"
               title="Start a project with Champz Digital"
             >
-              <Briefcase className="w-4 h-4 mr-1 text-white" />
-              Start a Project
+              <Briefcase className="w-4 h-4 mr-1 text-white shrink-0" />
+              <span>Start a Project</span>
             </button>
 
             <button 
               onClick={() => scrollTo('projects')} 
-              className="btn-frosted-secondary animate-hero-cta-2"
+              className="btn-frosted-secondary animate-hero-cta-2 w-full xs:w-auto"
               id="hero-work-btn"
               title="View selected work and projects"
             >
-              View Selected Work
-              <ArrowRight className="w-4 h-4 ml-1.5" />
+              <span>View Selected Work</span>
+              <ArrowRight className="w-4 h-4 ml-1.5 shrink-0" />
             </button>
           </div>
 
           {/* Frosted Proof Badges & Socials with Staggered Entrance */}
-          <div className="flex flex-col sm:flex-row sm:items-center gap-6 mt-8 pt-6 border-t border-[#1E293B]">
-            <div className="flex items-center space-x-4 animate-hero-proof-badges">
-              <div className="flex -space-x-3">
-                <div className="w-9 h-9 rounded-full border-2 border-[#080B14] bg-[#111827] border-[#1E293B] flex items-center justify-center text-[10px] font-bold text-[#60A5FA] shadow-md">React</div>
-                <div className="w-9 h-9 rounded-full border-2 border-[#080B14] bg-[#111827] border-[#1E293B] flex items-center justify-center text-[10px] font-bold text-[#3B82F6] shadow-md">Node</div>
-                <div className="w-9 h-9 rounded-full border-2 border-[#080B14] bg-[#111827] border-[#1E293B] flex items-center justify-center text-[10px] font-bold text-[#22D3EE] shadow-md">TS</div>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 mt-8 pt-6 border-t border-[#1E293B]">
+            <div className="flex items-center gap-3 animate-hero-proof-badges min-w-0">
+              <div className="flex -space-x-2.5 shrink-0" aria-label="Technologies: React, Node.js, TypeScript">
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-[#080B14] bg-[#111827] flex items-center justify-center text-[10px] font-bold text-[#60A5FA] shadow-md">React</div>
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-[#080B14] bg-[#111827] flex items-center justify-center text-[10px] font-bold text-[#3B82F6] shadow-md">Node</div>
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-[#080B14] bg-[#111827] flex items-center justify-center text-[10px] font-bold text-[#22D3EE] shadow-md">TS</div>
               </div>
-              <span className="text-xs text-[#94A3B8] font-medium">Professional Web Development &amp; Solutions</span>
+              <span className="text-xs text-[#94A3B8] font-medium leading-tight">
+                Professional Web Development &amp; Solutions
+              </span>
             </div>
 
-            <div className="socials sm:ml-auto flex items-center gap-3 animate-hero-proof-socials">
+            <div className="flex items-center gap-3 shrink-0 animate-hero-proof-socials">
               <a 
                 href={personalInfo.socials.twitter} 
                 target="_blank" 
@@ -104,7 +104,7 @@ export const Hero: React.FC = () => {
                 aria-label="Twitter / X Profile (@Toriblackm8j9)"
                 title="Twitter / X Profile (@Toriblackm8j9)"
                 id="social-twitter"
-                className="w-8 h-8 rounded-lg bg-[#111827] border border-[#1E293B] hover:border-[#3B82F6] flex items-center justify-center text-[#94A3B8] hover:text-[#60A5FA] transition-colors"
+                className="w-9 h-9 rounded-lg bg-[#111827] border border-[#1E293B] hover:border-[#3B82F6] flex items-center justify-center text-[#94A3B8] hover:text-[#60A5FA] transition-colors"
               >
                 <Twitter className="w-4 h-4" />
               </a>
@@ -116,7 +116,7 @@ export const Hero: React.FC = () => {
                 aria-label={`Chat on WhatsApp (${personalInfo.socials.whatsappNumber})`}
                 title={`Chat on WhatsApp (${personalInfo.socials.whatsappNumber})`}
                 id="social-whatsapp"
-                className="w-8 h-8 rounded-lg bg-[#111827] border border-[#1E293B] hover:border-[#3B82F6] flex items-center justify-center text-[#94A3B8] hover:text-[#3B82F6] transition-colors"
+                className="w-9 h-9 rounded-lg bg-[#111827] border border-[#1E293B] hover:border-[#3B82F6] flex items-center justify-center text-[#94A3B8] hover:text-[#3B82F6] transition-colors"
               >
                 <MessageCircle className="w-4 h-4" />
               </a>
@@ -125,20 +125,20 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* FROSTED CODE WINDOW */}
-        <div className="flex justify-center lg:justify-end animate-hero-code">
-          <div className="code-window-frosted code-font" id="hero-code-window">
+        <div className="w-full flex justify-center lg:justify-end animate-hero-code min-w-0">
+          <div className="code-window-frosted code-font w-full max-w-[500px] min-w-0" id="hero-code-window">
             <div className="code-window-header">
-              <div className="code-window-dots">
+              <div className="code-window-dots" aria-hidden="true">
                 <i></i>
                 <i></i>
                 <i></i>
               </div>
 
-              <div className="code-window-filename">champz-digital.ts</div>
+              <div className="code-window-filename truncate">champz-digital.ts</div>
 
               <button 
                 onClick={handleCopyCode} 
-                className="code-copy-btn"
+                className="code-copy-btn shrink-0"
                 title="Copy code to clipboard"
                 aria-label="Copy code snippet"
               >
@@ -157,7 +157,7 @@ export const Hero: React.FC = () => {
             </div>
 
             <div className="code-window-body">
-              <pre className="text-sm">
+              <pre className="text-xs sm:text-sm">
                 <span className="syntax-p">const</span> <span className="syntax-b">brand</span> = &#123;{'\n'}
                 {'  '}<span className="syntax-b">name</span>: <span className="syntax-g">&quot;Champz Digital&quot;</span>,{'\n'}
                 {'  '}<span className="syntax-b">focus</span>: <span className="syntax-g">&quot;Web Development&quot;</span>,{'\n'}

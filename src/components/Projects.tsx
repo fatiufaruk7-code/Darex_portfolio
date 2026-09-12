@@ -76,7 +76,7 @@ export const Projects: React.FC = () => {
         {/* Section Header */}
         <div className="reveal mb-8 sm:mb-12 text-left">
           <p className="text-[11px] sm:text-xs font-bold text-[#3B82F6] tracking-[0.2em] uppercase mb-1.5 sm:mb-2">
-            04 — SELECTED WORK
+            SELECTED WORK
           </p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#F8FAFC] tracking-tight leading-tight">
             Featured Projects<span className="text-[#3B82F6]">.</span>
