@@ -62,7 +62,10 @@ export const PWAInstallBanner: React.FC = () => {
               <div className="relative flex-shrink-0 w-11 h-11 rounded-xl bg-gradient-to-br from-[#1E293B] to-[#0D1220] border border-[#3B82F6]/40 p-1 flex items-center justify-center shadow-md shadow-black/50">
                 <img 
                   src="/pwa-192x192.png" 
-                  alt="Champz Digital Icon" 
+                  alt="Champz Digital logo" 
+                  width={44}
+                  height={44}
+                  loading="lazy"
                   className="w-full h-full object-contain rounded-lg"
                   onError={(e) => {
                     // Fallback to SVG if PNG is loading

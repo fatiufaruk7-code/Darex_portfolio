@@ -55,7 +55,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           onClick={(e) => handleNavClick(e, 'home')}
           aria-label="Champz Digital Home"
         >
-          <span className="logo-badge animate-cd-logo">
+          <span className="logo-badge animate-cd-logo" role="img" aria-label="Champz Digital logo">
             <span>C</span><span className="badge-d">D</span>
           </span>
           <span className="logo-title animate-brand-title">

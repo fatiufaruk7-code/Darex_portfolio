@@ -6,6 +6,14 @@
     <title>Champz Digital | Web Development &amp; Digital Solutions</title>
     <meta name="description" content="Champz Digital builds modern, responsive websites and digital solutions for businesses, organizations and individuals." />
     <meta name="author" content="Champz Digital" />
+    <link rel="canonical" href="https://darex-portfolio.vercel.app/" />
+
+    <!-- Search Engine Indexing & Robots -->
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+    <!-- Google Search Console Verification (Replace CONTENT with token provided by Google Search Console) -->
+    <!-- <meta name="google-site-verification" content="YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_TOKEN" /> -->
     
     <!-- PWA & Mobile Web App Meta -->
     <meta name="theme-color" content="#080B14" />
@@ -17,41 +25,59 @@
     <meta name="msapplication-TileColor" content="#080B14" />
     <meta name="msapplication-TileImage" content="/pwa-192x192.png" />
 
-    <!-- Open Graph / SEO -->
+    <!-- Open Graph / Social Media -->
+    <meta property="og:site_name" content="Champz Digital" />
     <meta property="og:title" content="Champz Digital | Web Development &amp; Digital Solutions" />
     <meta property="og:description" content="Champz Digital builds modern, responsive websites and digital solutions for businesses, organizations and individuals." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/pwa-512x512.png" />
+    <meta property="og:url" content="https://darex-portfolio.vercel.app/" />
+    <meta property="og:image" content="https://darex-portfolio.vercel.app/pwa-512x512.png" />
+    <meta property="og:image:secure_url" content="https://darex-portfolio.vercel.app/pwa-512x512.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="Champz Digital logo" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter / X Metadata -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Champz Digital | Web Development &amp; Digital Solutions" />
     <meta name="twitter:description" content="Champz Digital builds modern, responsive websites and digital solutions for businesses, organizations and individuals." />
-    <meta name="twitter:image" content="/pwa-512x512.png" />
+    <meta name="twitter:image" content="https://darex-portfolio.vercel.app/pwa-512x512.png" />
+    <meta name="twitter:image:alt" content="Champz Digital logo" />
 
-    <!-- JSON-LD Structured Data: Organization & WebSite (No personal name) -->
+    <!-- JSON-LD Structured Data: Organization & WebSite (No personal name, accurate production URLs) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
           "@type": "Organization",
-          "@id": "https://champzdigital.com/#organization",
+          "@id": "https://darex-portfolio.vercel.app/#organization",
           "name": "Champz Digital",
-          "url": "https://champzdigital.com",
-          "logo": "https://champzdigital.com/pwa-512x512.png",
+          "url": "https://darex-portfolio.vercel.app/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://darex-portfolio.vercel.app/pwa-512x512.png",
+            "width": 512,
+            "height": 512,
+            "caption": "Champz Digital logo"
+          },
           "description": "Champz Digital builds modern, responsive websites and digital solutions for businesses, organizations and individuals.",
           "sameAs": [
-            "https://twitter.com/Toriblackm8j9"
+            "https://x.com/Toriblackm8j9"
           ]
         },
         {
           "@type": "WebSite",
-          "@id": "https://champzdigital.com/#website",
-          "url": "https://champzdigital.com",
+          "@id": "https://darex-portfolio.vercel.app/#website",
+          "url": "https://darex-portfolio.vercel.app/",
           "name": "Champz Digital",
-          "description": "Modern Websites. Digital Solutions.",
+          "description": "Champz Digital builds modern, responsive websites and digital solutions for businesses, organizations and individuals.",
           "publisher": {
-            "@id": "https://champzdigital.com/#organization"
-          }
+            "@id": "https://darex-portfolio.vercel.app/#organization"
+          },
+          "inLanguage": "en"
         }
       ]
     }
