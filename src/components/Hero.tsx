@@ -30,14 +30,16 @@ export const Hero: React.FC = () => {
       <div className="container hero-grid relative z-10">
         <div className="flex flex-col justify-center">
           {/* Subtle Professional Status Indicator */}
-          <div className="status-badge inline-flex items-center gap-2 mb-4 animate-hero-status" id="hero-status">
-            <div className="status-dot-blue"></div>
-            <span className="status-text-blue text-xs font-semibold">Available for freelance projects</span>
+          <div className="status-badge inline-flex items-center gap-2 mb-3 sm:mb-4 animate-hero-status max-w-full" id="hero-status">
+            <div className="status-dot-blue shrink-0"></div>
+            <span className="status-text-blue text-[10px] xs:text-[11px] sm:text-xs font-bold tracking-wider sm:tracking-widest">
+              AVAILABLE FOR FREELANCE PROJECTS
+            </span>
           </div>
 
           {/* Main Heading with Masked Upward Reveal */}
-          <div className="hero-headline-mask overflow-hidden py-1">
-            <h1 className="tracking-tighter text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-black text-white animate-hero-headline break-words">
+          <div className="hero-headline-mask overflow-hidden py-1 min-h-0">
+            <h1 className="tracking-tighter text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-black text-white animate-hero-headline break-words leading-tight sm:leading-none">
               {personalInfo.name}<span className="text-[#3B82F6]">.</span>
             </h1>
           </div>
@@ -48,7 +50,7 @@ export const Hero: React.FC = () => {
           </p>
 
           {/* Main Headline with Masked Reveal */}
-          <div className="hero-subhead-mask overflow-hidden my-1">
+          <div className="hero-subhead-mask overflow-hidden my-1 min-h-0">
             <p className="hero-subhead text-xl sm:text-3xl md:text-4xl font-extrabold text-white leading-tight tracking-tight animate-hero-subhead">
               Modern Websites.{' '}
               <span className="text-[#3B82F6]">Digital Solutions.</span>
@@ -84,14 +86,14 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Frosted Proof Badges & Socials with Staggered Entrance */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-5 mt-8 pt-6 border-t border-[#1E293B]">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-5 mt-7 sm:mt-8 pt-5 sm:pt-6 border-t border-[#1E293B]">
             <div className="flex items-center gap-3 animate-hero-proof-badges min-w-0">
-              <div className="flex -space-x-2.5 shrink-0" aria-label="Technologies: React, Node.js, TypeScript">
-                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-[#080B14] bg-[#111827] flex items-center justify-center text-[10px] font-bold text-[#60A5FA] shadow-md">React</div>
-                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-[#080B14] bg-[#111827] flex items-center justify-center text-[10px] font-bold text-[#3B82F6] shadow-md">Node</div>
-                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full border-2 border-[#080B14] bg-[#111827] flex items-center justify-center text-[10px] font-bold text-[#22D3EE] shadow-md">TS</div>
+              <div className="flex -space-x-2 shrink-0" aria-label="Technologies: React, Node.js, TypeScript">
+                <div className="w-8 h-8 rounded-full border-2 border-[#080B14] bg-[#111827] flex items-center justify-center text-[10px] font-bold text-[#60A5FA] shadow-md shrink-0">React</div>
+                <div className="w-8 h-8 rounded-full border-2 border-[#080B14] bg-[#111827] flex items-center justify-center text-[10px] font-bold text-[#3B82F6] shadow-md shrink-0">Node</div>
+                <div className="w-8 h-8 rounded-full border-2 border-[#080B14] bg-[#111827] flex items-center justify-center text-[10px] font-bold text-[#22D3EE] shadow-md shrink-0">TS</div>
               </div>
-              <span className="text-xs text-[#94A3B8] font-medium leading-tight">
+              <span className="text-xs sm:text-sm text-[#94A3B8] font-medium leading-snug">
                 Professional Web Development &amp; Solutions
               </span>
             </div>
@@ -104,7 +106,7 @@ export const Hero: React.FC = () => {
                 aria-label="Twitter / X Profile (@Toriblackm8j9)"
                 title="Twitter / X Profile (@Toriblackm8j9)"
                 id="social-twitter"
-                className="w-9 h-9 rounded-lg bg-[#111827] border border-[#1E293B] hover:border-[#3B82F6] flex items-center justify-center text-[#94A3B8] hover:text-[#60A5FA] transition-colors"
+                className="w-9 h-9 rounded-lg bg-[#111827] border border-[#1E293B] hover:border-[#3B82F6] flex items-center justify-center text-[#94A3B8] hover:text-[#60A5FA] transition-colors shrink-0"
               >
                 <Twitter className="w-4 h-4" />
               </a>
@@ -116,7 +118,7 @@ export const Hero: React.FC = () => {
                 aria-label={`Chat on WhatsApp (${personalInfo.socials.whatsappNumber})`}
                 title={`Chat on WhatsApp (${personalInfo.socials.whatsappNumber})`}
                 id="social-whatsapp"
-                className="w-9 h-9 rounded-lg bg-[#111827] border border-[#1E293B] hover:border-[#3B82F6] flex items-center justify-center text-[#94A3B8] hover:text-[#3B82F6] transition-colors"
+                className="w-9 h-9 rounded-lg bg-[#111827] border border-[#1E293B] hover:border-[#3B82F6] flex items-center justify-center text-[#94A3B8] hover:text-[#3B82F6] transition-colors shrink-0"
               >
                 <MessageCircle className="w-4 h-4" />
               </a>
@@ -125,7 +127,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* FROSTED CODE WINDOW */}
-        <div className="w-full flex justify-center lg:justify-end animate-hero-code min-w-0">
+        <div className="w-full flex justify-center lg:justify-end animate-hero-code min-w-0 max-w-full">
           <div className="code-window-frosted code-font w-full max-w-[500px] min-w-0" id="hero-code-window">
             <div className="code-window-header">
               <div className="code-window-dots" aria-hidden="true">
@@ -157,7 +159,7 @@ export const Hero: React.FC = () => {
             </div>
 
             <div className="code-window-body">
-              <pre className="text-xs sm:text-sm">
+              <pre className="text-[11px] xs:text-xs sm:text-[13px] leading-relaxed">
                 <span className="syntax-p">const</span> <span className="syntax-b">brand</span> = &#123;{'\n'}
                 {'  '}<span className="syntax-b">name</span>: <span className="syntax-g">&quot;Champz Digital&quot;</span>,{'\n'}
                 {'  '}<span className="syntax-b">focus</span>: <span className="syntax-g">&quot;Web Development&quot;</span>,{'\n'}

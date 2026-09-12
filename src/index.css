@@ -359,8 +359,9 @@ header.scrolled {
 .status-badge {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 24px;
+  gap: 8px;
+  margin-bottom: 20px;
+  max-width: 100%;
 }
 
 .status-dot-blue,
@@ -372,6 +373,7 @@ header.scrolled {
   background-color: #3B82F6;
   box-shadow: 0 0 10px #3B82F6, 0 0 18px rgba(37, 99, 235, 0.4);
   animation: pulse-dot 2s infinite;
+  flex-shrink: 0;
 }
 
 @keyframes pulse-dot {
@@ -390,9 +392,23 @@ header.scrolled {
 .status-text-emerald {
   font-size: 10px;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.12em;
   color: #60A5FA;
   font-weight: 700;
+  line-height: 1.35;
+}
+
+@media (min-width: 640px) {
+  .status-badge {
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  .status-text-blue,
+  .status-text-orange,
+  .status-text-emerald {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+  }
 }
 
 .hero h1 {
@@ -630,14 +646,33 @@ header.scrolled {
   position: relative;
   z-index: 2;
   overflow-x: auto;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   max-width: 100%;
   min-width: 0;
 }
 
+.code-window-body::-webkit-scrollbar {
+  height: 4px;
+}
+
+.code-window-body::-webkit-scrollbar-track {
+  background: rgba(17, 24, 39, 0.4);
+  border-radius: 4px;
+}
+
+.code-window-body::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.35);
+  border-radius: 4px;
+}
+
+.code-window-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.6);
+}
+
 .code-window-body pre {
-  font-size: 12px;
-  line-height: 1.75;
+  font-size: 11px;
+  line-height: 1.7;
   margin: 0;
   white-space: pre;
   display: block;
@@ -1965,6 +2000,22 @@ footer {
   .hero h1 {
     font-size: clamp(2rem, 8vw, 3.5rem);
     letter-spacing: -0.03em;
+  }
+
+  .ambient-hero-orb-1 {
+    width: 260px;
+    height: 260px;
+    left: -20px;
+    top: 5%;
+    filter: blur(50px);
+  }
+
+  .ambient-hero-orb-2 {
+    width: 240px;
+    height: 240px;
+    right: -20px;
+    bottom: 5%;
+    filter: blur(50px);
   }
 
   .skills-grid,
