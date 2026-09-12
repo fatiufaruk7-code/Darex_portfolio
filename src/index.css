@@ -334,9 +334,11 @@ header.scrolled {
 .hero {
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  padding-top: 105px;
-  padding-bottom: 60px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding-top: 98px;
+  padding-bottom: 50px;
   position: relative;
   z-index: 10;
   overflow: hidden;
@@ -344,6 +346,9 @@ header.scrolled {
 
 @media(min-width: 769px) {
   .hero {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     padding-top: 130px;
     padding-bottom: 70px;
   }
@@ -357,10 +362,12 @@ header.scrolled {
 }
 
 .status-badge {
+  position: relative;
+  z-index: 10;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   max-width: 100%;
 }
 
@@ -396,18 +403,19 @@ header.scrolled {
   color: #60A5FA;
   font-weight: 700;
   line-height: 1.35;
+  white-space: nowrap;
 }
 
 @media (min-width: 640px) {
   .status-badge {
     gap: 10px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
   .status-text-blue,
   .status-text-orange,
   .status-text-emerald {
     font-size: 11px;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.16em;
   }
 }
 
@@ -1505,6 +1513,8 @@ footer {
 .animate-hero-status {
   animation: heroStatusEntrance 0.42s cubic-bezier(0.16, 1, 0.3, 1) 0.42s both;
   will-change: transform, opacity, filter;
+  position: relative;
+  z-index: 10;
 }
 
 /* Gentle status dot pulse */
@@ -1965,7 +1975,7 @@ footer {
 
   .hero-grid {
     grid-template-columns: minmax(0, 1fr);
-    gap: 40px;
+    gap: 24px;
   }
 
   .about-grid {
@@ -1995,6 +2005,10 @@ footer {
 @media(max-width: 640px) {
   .section {
     padding: 70px 0;
+  }
+
+  .hero-grid {
+    gap: 20px;
   }
 
   .hero h1 {

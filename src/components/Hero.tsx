@@ -30,9 +30,9 @@ export const Hero: React.FC = () => {
       <div className="container hero-grid relative z-10">
         <div className="flex flex-col justify-center">
           {/* Subtle Professional Status Indicator */}
-          <div className="status-badge inline-flex items-center gap-2 mb-3 sm:mb-4 animate-hero-status max-w-full" id="hero-status">
+          <div className="status-badge relative z-10 inline-flex items-center gap-2 mb-2.5 sm:mb-4 animate-hero-status max-w-full" id="hero-status">
             <div className="status-dot-blue shrink-0"></div>
-            <span className="status-text-blue text-[10px] xs:text-[11px] sm:text-xs font-bold tracking-wider sm:tracking-widest">
+            <span className="status-text-blue text-[10px] xs:text-[11px] sm:text-xs font-bold tracking-wider sm:tracking-widest whitespace-nowrap">
               AVAILABLE FOR FREELANCE PROJECTS
             </span>
           </div>
@@ -86,19 +86,19 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Frosted Proof Badges & Socials with Staggered Entrance */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-5 mt-7 sm:mt-8 pt-5 sm:pt-6 border-t border-[#1E293B]">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3.5 sm:gap-4 mt-4 sm:mt-6 pt-3.5 sm:pt-5 border-t border-[#1E293B]">
             <div className="flex items-center gap-3 animate-hero-proof-badges min-w-0">
               <div className="flex -space-x-2 shrink-0" aria-label="Technologies: React, Node.js, TypeScript">
                 <div className="w-8 h-8 rounded-full border-2 border-[#080B14] bg-[#111827] flex items-center justify-center text-[10px] font-bold text-[#60A5FA] shadow-md shrink-0">React</div>
                 <div className="w-8 h-8 rounded-full border-2 border-[#080B14] bg-[#111827] flex items-center justify-center text-[10px] font-bold text-[#3B82F6] shadow-md shrink-0">Node</div>
                 <div className="w-8 h-8 rounded-full border-2 border-[#080B14] bg-[#111827] flex items-center justify-center text-[10px] font-bold text-[#22D3EE] shadow-md shrink-0">TS</div>
               </div>
-              <span className="text-xs sm:text-sm text-[#94A3B8] font-medium leading-snug">
+              <span className="text-xs sm:text-sm text-[#94A3B8] font-medium leading-tight sm:leading-snug">
                 Professional Web Development &amp; Solutions
               </span>
             </div>
 
-            <div className="flex items-center gap-3 shrink-0 animate-hero-proof-socials">
+            <div className="flex items-center gap-2.5 shrink-0 animate-hero-proof-socials">
               <a 
                 href={personalInfo.socials.twitter} 
                 target="_blank" 
@@ -106,9 +106,9 @@ export const Hero: React.FC = () => {
                 aria-label="Twitter / X Profile (@Toriblackm8j9)"
                 title="Twitter / X Profile (@Toriblackm8j9)"
                 id="social-twitter"
-                className="w-9 h-9 rounded-lg bg-[#111827] border border-[#1E293B] hover:border-[#3B82F6] flex items-center justify-center text-[#94A3B8] hover:text-[#60A5FA] transition-colors shrink-0"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-[#111827] border border-[#1E293B] hover:border-[#3B82F6] flex items-center justify-center text-[#94A3B8] hover:text-[#60A5FA] transition-colors shrink-0"
               >
-                <Twitter className="w-4 h-4" />
+                <Twitter className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </a>
 
               <a 
@@ -118,9 +118,9 @@ export const Hero: React.FC = () => {
                 aria-label={`Chat on WhatsApp (${personalInfo.socials.whatsappNumber})`}
                 title={`Chat on WhatsApp (${personalInfo.socials.whatsappNumber})`}
                 id="social-whatsapp"
-                className="w-9 h-9 rounded-lg bg-[#111827] border border-[#1E293B] hover:border-[#3B82F6] flex items-center justify-center text-[#94A3B8] hover:text-[#3B82F6] transition-colors shrink-0"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-[#111827] border border-[#1E293B] hover:border-[#3B82F6] flex items-center justify-center text-[#94A3B8] hover:text-[#3B82F6] transition-colors shrink-0"
               >
-                <MessageCircle className="w-4 h-4" />
+                <MessageCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </a>
             </div>
           </div>
